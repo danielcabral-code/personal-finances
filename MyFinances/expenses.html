@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  
+
 
     <div class="topnav" id="homeTopnav">
         <a class="active" href="expenses.html">Despesas</a>
@@ -26,8 +26,11 @@
         </a>
     </div>
 
-   <!-- tou a tentar que ao colocar algo no input text ao carregar no botao ficar la fixo -->
-    <p>Alimentar<input id="food" class="txt" type="text" ><button id="btn">check</button> <label>atual/maximo</label></p> 
+    <!-- tou a tentar que ao colocar algo no input text ao carregar no botao ficar la fixo -->
+    <p>Alimentar<input type="text" id="food" oninput="foodValue()"></input><button id="btn">check</button><label id="actual">min/</label> <label id="max"></label></p>
+  
+
+  
 
 
 
