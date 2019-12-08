@@ -9,22 +9,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- link do css da pagina home -->
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="expenses.css">
     <title>My Finances</title>
 </head>
 
 <body>
-  
+
 
     <div class="topnav" id="homeTopnav">
-        <a class="active" href="manageBudget.html">Manage Budget</a>
+        <a class="active" href="expenses.html">Despesas</a>
         <a href="home.html">My Finances</a>
-        <a href="expenses.html">Despesas</a>
+        <a href="manageBudget.html">Gerir saldo</a>
         <a href="">About</a>
         <a href="javascript:void(0);" class="icon" onclick="barFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <script src="manageBudget.js"></script>
+
+    <!-- tou a tentar que ao colocar algo no input text ao carregar no botao ficar la fixo -->
+    <p>Alimentar<input type="text" id="food" oninput="foodValue()"></input><button id="btn">check</button><label id="actual">min/</label> <label id="max"></label></p>
+  
+
+  
+
+
+
+
+
+    <script src="home.js"></script>
+    <script src="expenses.js"></script>
 </body>
 
 </html>
