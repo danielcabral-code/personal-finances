@@ -20,12 +20,51 @@ input,p {
     outline: none;
     
 }
-
-#actual {
+.actualExpense{
 
     margin-left: 10px;
+    width: 38px;
+    height: 15px;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    
+}
+
+
+.actual{
+    margin-left: 200px;
     width: 30px;
     border: none;
     text-align: right;
-   
+    background-color: lightblue;
 }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: lightblue;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+ .active, .collapsible:hover {
+    background-color:lightseagreen;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+
+  .content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
