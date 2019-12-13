@@ -10,12 +10,11 @@
     <!-- link do css da pagina home -->
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="expenses.css">
+    
     <title>My Finances</title>
 </head>
 
 <body>
-
-
     <div class="topnav" id="homeTopnav">
         <a class="active" href="expenses.html">Despesas</a>
         <a href="home.html">My Finances</a>
@@ -26,27 +25,46 @@
         </a>
     </div>
 
+   
 
-    <p>Alimentação<input type="number" value="0" id="food" onfocus="this.value=''"></input>€ <button
-            id="btn">check</button>  <input type="number" class="actual" value="0" disabled></input> € /<label
-            id="max"></label></p>
+
 
 <!-- menu de botoões collapse -->
-    <button type="button" class="collapsible">Lazer <input type="number" class="actual" id="actualLaser" value="0"
-            disabled></input>€</button>
+<div class="menu">
+<button type="button" class="collapsible">Alimentação</button>
+
+    <div class="content">
+        <p>Alimentação Geral<input type="number" value="0" class="actualExpense" id="geneFood" onfocus="this.value=''"></input>€ <input type="number" class="actual" id="actualFood" value="0" disabled>€ /</input><label id="max"></label>
+
+            <p>Restaurantes<input type="number" value="0" class="actualExpense" id="awayFood" onfocus="this.value=''"></input>€ <input type="number" class="actual" id="actualAwayFood" value="0" disabled>€ /</input><label id="max"></label></p>
+
+                   
+    <div class="saveButton"><button id="btnFood">Guardar</button> </div>
+    <p></p>                        
+    </div>
+<!-- -------------------------------------------------------------------------------------- -->
+
+    <button type="button" class="collapsible">Lazer</button>
 
     <div class="content">
         <p>Cinema<input type="number" value="0" class="actualExpense" id="cinema" onfocus="this.value=''"></input>€
 
-            <p>Eventos Desportivos<input type="number" value="0" class="actualExpense" id="cinema"
+        <p>Eventos Desportivos<input type="number" value="0" class="actualExpense" id="cinema"
                     onfocus="this.value=''"></input>€
-                <p>Ginásio<input type="number" value="0" class="actualExpense" id="cinema"
+        <p>Ginásio<input type="number" value="0" class="actualExpense" id="cinema"
                         onfocus="this.value=''"></input>€
-                    <p>Saídas à noite<input type="number" value="0" class="actualExpense" id="cinema"
+        <p>Saídas à noite<input type="number" value="0" class="actualExpense" id="cinema"
                             onfocus="this.value=''"></input>€
-                        <p>Viagens / Hotéis<input type="number" value="0" class="actualExpense" id="cinema"
+        <p>Viagens / Hotéis<input type="number" value="0" class="actualExpense" id="cinema"
                                 onfocus="this.value=''"></input>€
+                                
+                                
+    <div class="saveButton"><button id="btnLeisure">Guardar</button> </div>
+    <p></p>                         
+                                
     </div>
+
+<!-- -------------------------------------------------------------------------------------- -->
     <button type="button" class="collapsible">Open Section 2</button>
     <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -62,7 +80,7 @@
 
 
 
-
+</div>
 
 
     <script src="home.js"></script>

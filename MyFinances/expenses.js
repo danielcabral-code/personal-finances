@@ -1,11 +1,21 @@
 /* função que soma o nosso gasto atual*/
 let sum = 0
-btn.addEventListener("click", function () {
-    let inp = +document.querySelector("#food").value
-    let act = +document.querySelector(".actual").value
-    sum = act + inp
-    document.querySelector(".actual").value = sum
-    document.querySelector("#food").value = 0
+
+//botao que guarda os valores da secção de alimentação
+btnFood.addEventListener("click", function () {
+  //calculo da alimentação geral
+    let generalFood = +document.querySelector("#geneFood").value
+    let actF = +document.querySelector("#actualFood").value
+    sum = actF + generalFood
+    document.querySelector("#actualFood").value = sum
+    document.querySelector("#geneFood").value = 0
+
+//calculo dos gastos em restaurante
+    let awayFood = +document.querySelector("#awayFood").value
+    let actAFood = +document.querySelector("#actualAwayFood").value
+    sum = actAFood + awayFood
+    document.querySelector("#actualAwayFood").value = sum
+    document.querySelector("#awayFood").value = 0
 })
 
 /*função para o botão collapse*/
