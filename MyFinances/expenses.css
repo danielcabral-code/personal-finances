@@ -3,14 +3,25 @@ body {
 }
 
 
+
 input,p {
     font-size: 18px;
     background-color: white;
 
 }
 
+#date{
+    border:1px black solid;
+    outline: none;
+
+}
+#calendar{
+    text-align: center;
+   
+}
 .menu{
     margin-top: 10px;
+   
 }
 
 .saveButton{
@@ -28,6 +39,7 @@ input,p {
     border-bottom: 1px solid black;
     outline: none;
     
+    
 }
 
 
@@ -36,7 +48,9 @@ input,p {
     width: 30px;
     border: none;
     text-align: right;
-    background-color: white
+    background-color: white;
+   
+    
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -46,6 +60,7 @@ input,p {
     cursor: pointer;
     padding: 18px;
     width: 100%;
+   
     border: none;
     text-align: left;
     outline: none;
