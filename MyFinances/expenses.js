@@ -1,10 +1,44 @@
 let expenses = [];
 if (localStorage.getItem('expenses')) {
-    expenses = JSON.parse(localStorage.getItem('expenses'))
+  expenses = JSON.parse(localStorage.getItem('expenses'))
+ 
 
-  } else {
-    expenses = []
+
+  for (let i = 0; i < expenses.length; i++) {
+    const savedItem = expenses[i]
+    
+
+
+    if (i === expenses.length - 1) {
+      
+    
+      document.getElementById("actualFood").value = savedItem.generalFood
+      document.querySelector("#actualAwayFood").value = savedItem.restaurant
+      document.querySelector("#actualCin").value = savedItem.movies
+      document.querySelector("#actualSport").value = savedItem.sports
+      document.querySelector("#actualGym").value = savedItem.gym
+      document.querySelector("#actualOut").value =savedItem.nightOut
+      document.querySelector("#actualTrip").value = savedItem.trip
+      document.querySelector("#actualElect").value =savedItem.electricity
+      document.querySelector("#actualWater").value=savedItem.water
+      document.querySelector("#actualIncome").value=savedItem.income
+      document.querySelector("#actualNet").value=savedItem.internet
+      document.querySelector("#actualOtherPay").value=savedItem.otherHousePay
+      document.querySelector("#actualPharm").value = savedItem.pharm
+      document.querySelector("#actualDoctor").value=savedItem.doctor
+      document.querySelector("#actualOtherHealth").value=savedItem.otherHealthPay
+      document.querySelector("#actualFuel").value=savedItem.fuel
+      document.querySelector("#actualMaintenance").value=savedItem.carMaintenance
+      document.querySelector("#actualInsurance").value=savedItem.carInsurance
+      document.querySelector("#actualCarFine").value=savedItem.carFine
+
+    }
   }
+
+
+} else {
+  expenses = []
+}
 
 /* variavel que soma o nosso gasto atual*/
 let sum = 0
@@ -119,7 +153,7 @@ save.addEventListener("click", function () {
   document.querySelector("#actualDoctor").value = sum
 
 
-  //calculo de outros gastos 
+  //calculo de outros gastos na saúde
 
   let otherHealth = +document.querySelector("#otherHealth").value
   let actualOtherHealth = +document.querySelector("#actualOtherHealth").value
@@ -128,7 +162,7 @@ save.addEventListener("click", function () {
 
 
 
-  //botao que guarda os valores da secção do veiculo
+
 
 
   //calculo do combustivel
@@ -160,17 +194,34 @@ save.addEventListener("click", function () {
   document.querySelector("#actualCarFine").value = sum
 
 
-
+  //criação dosd dados na local storage
   let newExpense = {}
   newExpense.date = document.querySelector("#date").value
-  newExpense.generalFood = + document.querySelector("#actualFood").value
-  newExpense.restaurant = +document.querySelector("#awayFood").value
+  newExpense.generalFood = +document.querySelector("#actualFood").value
+  newExpense.restaurant = +document.querySelector("#actualAwayFood").value
+  newExpense.electricity = +document.querySelector("#actualElect").value
+  newExpense.water = +document.querySelector("#actualWater").value
+  newExpense.income = +document.querySelector("#actualIncome").value
+  newExpense.internet = +document.querySelector("#actualNet").value
+  newExpense.otherHousePay = +document.querySelector("#actualOtherPay").value
+  newExpense.movies = +document.querySelector("#actualCin").value
+  newExpense.sports = +document.querySelector("#actualSport").value
+  newExpense.gym = +document.querySelector("#actualGym").value
+  newExpense.nightOut = +document.querySelector("#actualOut").value
+  newExpense.trip = +document.querySelector("#actualTrip").value
+  newExpense.pharm = +document.querySelector("#actualPharm").value
+  newExpense.doctor = +document.querySelector("#actualDoctor").value
+  newExpense.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+  newExpense.fuel = +document.querySelector("#actualFuel").value
+  newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
+  newExpense.carInsurance = +document.querySelector("#actualInsurance").value
+  newExpense.carFine = +document.querySelector("#actualCarFine").value
   expenses[expenses.length] = newExpense
   //console.log(players); */
 
 
 
-  localStorage.setItem("expenses", JSON.stringify(expenses)) 
+  localStorage.setItem("expenses", JSON.stringify(expenses))
 
   /* let retrievedData = localStorage.getItem("expenses");
     let playerData = JSON.parse(retrievedData);
