@@ -7,11 +7,12 @@ if (localStorage.getItem('expenses')) {
   for (let i = 0; i < expenses.length; i++) {
     const savedItem = expenses[i]
     
+    //let compareDate = document.querySelector("#date").value
 
-
-    if (i === expenses.length - 1) {
+    if (i === expenses.length - 1 ) {
       
-    
+      //console.log(savedItem.date);
+      
       document.getElementById("actualFood").value = savedItem.generalFood
       document.querySelector("#actualAwayFood").value = savedItem.restaurant
       document.querySelector("#actualCin").value = savedItem.movies
