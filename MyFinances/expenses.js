@@ -1,37 +1,38 @@
+let compareDate = document.querySelector("#date").value
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
- 
+
 
 
   for (let i = 0; i < expenses.length; i++) {
     const savedItem = expenses[i]
-    
-    //let compareDate = document.querySelector("#date").value
 
-    if (i === expenses.length - 1 ) {
-      
+
+
+    if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
+
       //console.log(savedItem.date);
-      
+
       document.getElementById("actualFood").value = savedItem.generalFood
       document.querySelector("#actualAwayFood").value = savedItem.restaurant
       document.querySelector("#actualCin").value = savedItem.movies
       document.querySelector("#actualSport").value = savedItem.sports
       document.querySelector("#actualGym").value = savedItem.gym
-      document.querySelector("#actualOut").value =savedItem.nightOut
+      document.querySelector("#actualOut").value = savedItem.nightOut
       document.querySelector("#actualTrip").value = savedItem.trip
-      document.querySelector("#actualElect").value =savedItem.electricity
-      document.querySelector("#actualWater").value=savedItem.water
-      document.querySelector("#actualIncome").value=savedItem.income
-      document.querySelector("#actualNet").value=savedItem.internet
-      document.querySelector("#actualOtherPay").value=savedItem.otherHousePay
+      document.querySelector("#actualElect").value = savedItem.electricity
+      document.querySelector("#actualWater").value = savedItem.water
+      document.querySelector("#actualIncome").value = savedItem.income
+      document.querySelector("#actualNet").value = savedItem.internet
+      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
       document.querySelector("#actualPharm").value = savedItem.pharm
-      document.querySelector("#actualDoctor").value=savedItem.doctor
-      document.querySelector("#actualOtherHealth").value=savedItem.otherHealthPay
-      document.querySelector("#actualFuel").value=savedItem.fuel
-      document.querySelector("#actualMaintenance").value=savedItem.carMaintenance
-      document.querySelector("#actualInsurance").value=savedItem.carInsurance
-      document.querySelector("#actualCarFine").value=savedItem.carFine
+      document.querySelector("#actualDoctor").value = savedItem.doctor
+      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+      document.querySelector("#actualFuel").value = savedItem.fuel
+      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+      document.querySelector("#actualInsurance").value = savedItem.carInsurance
+      document.querySelector("#actualCarFine").value = savedItem.carFine
 
     }
   }
@@ -195,7 +196,71 @@ save.addEventListener("click", function () {
   document.querySelector("#actualCarFine").value = sum
 
 
-  //criação dosd dados na local storage
+  //criação dos dados na local storage
+  for (let i = 0; i < expenses.length; i++) {
+    const savedItem = expenses[i]
+
+
+
+    if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
+
+
+      savedItem.generalFood = savedItem.generalFood + 100
+      //savedItem.restaurant = +document.querySelector("#actualAwayFood").value
+      /*  newExpense.electricity = +document.querySelector("#actualElect").value
+       newExpense.water = +document.querySelector("#actualWater").value
+       newExpense.income = +document.querySelector("#actualIncome").value
+       newExpense.internet = +document.querySelector("#actualNet").value
+       newExpense.otherHousePay = +document.querySelector("#actualOtherPay").value
+       newExpense.movies = +document.querySelector("#actualCin").value
+       newExpense.sports = +document.querySelector("#actualSport").value
+       newExpense.gym = +document.querySelector("#actualGym").value
+       newExpense.nightOut = +document.querySelector("#actualOut").value
+       newExpense.trip = +document.querySelector("#actualTrip").value
+       newExpense.pharm = +document.querySelector("#actualPharm").value
+       newExpense.doctor = +document.querySelector("#actualDoctor").value
+       newExpense.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+       newExpense.fuel = +document.querySelector("#actualFuel").value
+       newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
+       newExpense.carInsurance = +document.querySelector("#actualInsurance").value
+       newExpense.carFine = +document.querySelector("#actualCarFine").value
+       expenses[expenses.length] = newExpense */
+
+      localStorage.setItem("expenses", JSON.stringify(expenses))
+
+    } 
+    else{
+      let newExpense = {}
+      newExpense.date = document.querySelector("#date").value
+      newExpense.generalFood = +document.querySelector("#actualFood").value
+      newExpense.restaurant = +document.querySelector("#actualAwayFood").value
+      newExpense.electricity = +document.querySelector("#actualElect").value
+      newExpense.water = +document.querySelector("#actualWater").value
+      newExpense.income = +document.querySelector("#actualIncome").value
+      newExpense.internet = +document.querySelector("#actualNet").value
+      newExpense.otherHousePay = +document.querySelector("#actualOtherPay").value
+      newExpense.movies = +document.querySelector("#actualCin").value
+      newExpense.sports = +document.querySelector("#actualSport").value
+      newExpense.gym = +document.querySelector("#actualGym").value
+      newExpense.nightOut = +document.querySelector("#actualOut").value
+      newExpense.trip = +document.querySelector("#actualTrip").value
+      newExpense.pharm = +document.querySelector("#actualPharm").value
+      newExpense.doctor = +document.querySelector("#actualDoctor").value
+      newExpense.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+      newExpense.fuel = +document.querySelector("#actualFuel").value
+      newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
+      newExpense.carInsurance = +document.querySelector("#actualInsurance").value
+      newExpense.carFine = +document.querySelector("#actualCarFine").value
+      expenses[expenses.length] = newExpense 
+     
+      localStorage.setItem("expenses", JSON.stringify(expenses))
+
+    }
+    
+      
+    
+  }
+  
   let newExpense = {}
   newExpense.date = document.querySelector("#date").value
   newExpense.generalFood = +document.querySelector("#actualFood").value
@@ -217,12 +282,10 @@ save.addEventListener("click", function () {
   newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
   newExpense.carInsurance = +document.querySelector("#actualInsurance").value
   newExpense.carFine = +document.querySelector("#actualCarFine").value
-  expenses[expenses.length] = newExpense
-  //console.log(players); */
-
-
-
+  expenses[expenses.length] = newExpense 
+ 
   localStorage.setItem("expenses", JSON.stringify(expenses))
+
 
   /* let retrievedData = localStorage.getItem("expenses");
     let playerData = JSON.parse(retrievedData);
