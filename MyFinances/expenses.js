@@ -1,4 +1,7 @@
+
+
 let compareDate = document.querySelector("#date").value
+console.log("compareDate: " + compareDate);
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -195,79 +198,31 @@ save.addEventListener("click", function () {
   sum = actualCarFine + carFine
   document.querySelector("#actualCarFine").value = sum
 
-
-  //criação dos dados na local storage
-  if (expenses.length > 0) {
-
-    for (let i = 0; i < expenses.length; i++) {
-      const savedItem = expenses[i]
+  let foundDate = false;
+  let savedItem;
+  let compareDate = document.querySelector("#date").value;
 
 
+  for (let i = 0; i < expenses.length; i++)
+  {
+    savedItem = expenses[i];
 
-      if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
-
-
-        savedItem.generalFood = +document.querySelector("#actualFood").value
-        savedItem.restaurant = +document.querySelector("#actualAwayFood").value
-        savedItem.electricity = +document.querySelector("#actualElect").value
-        savedItem.water = +document.querySelector("#actualWater").value
-        savedItem.income = +document.querySelector("#actualIncome").value
-        savedItem.internet = +document.querySelector("#actualNet").value
-        savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
-        savedItem.movies = +document.querySelector("#actualCin").value
-        savedItem.sports = +document.querySelector("#actualSport").value
-        savedItem.gym = +document.querySelector("#actualGym").value
-        savedItem.nightOut = +document.querySelector("#actualOut").value
-        savedItem.trip = +document.querySelector("#actualTrip").value
-        savedItem.pharm = +document.querySelector("#actualPharm").value
-        savedItem.doctor = +document.querySelector("#actualDoctor").value
-        savedItem.otherHealthPay = +document.querySelector("#actualOtherHealth").value
-        savedItem.fuel = +document.querySelector("#actualFuel").value
-        savedItem.carMaintenance = +document.querySelector("#actualMaintenance").value
-        savedItem.carInsurance = +document.querySelector("#actualInsurance").value
-        savedItem.carFine = +document.querySelector("#actualCarFine").value
-
-
-        localStorage.setItem("expenses", JSON.stringify(expenses))
-
-      }
-
+    if (savedItem.date === compareDate)
+    {
+      SaveItem(savedItem);
+      foundDate = true;
     }
+  }
 
-
-
-
-
-  } else {
-    let newExpense = {}
-    newExpense.date = document.querySelector("#date").value
-    newExpense.generalFood = +document.querySelector("#actualFood").value
-    newExpense.restaurant = +document.querySelector("#actualAwayFood").value
-    newExpense.electricity = +document.querySelector("#actualElect").value
-    newExpense.water = +document.querySelector("#actualWater").value
-    newExpense.income = +document.querySelector("#actualIncome").value
-    newExpense.internet = +document.querySelector("#actualNet").value
-    newExpense.otherHousePay = +document.querySelector("#actualOtherPay").value
-    newExpense.movies = +document.querySelector("#actualCin").value
-    newExpense.sports = +document.querySelector("#actualSport").value
-    newExpense.gym = +document.querySelector("#actualGym").value
-    newExpense.nightOut = +document.querySelector("#actualOut").value
-    newExpense.trip = +document.querySelector("#actualTrip").value
-    newExpense.pharm = +document.querySelector("#actualPharm").value
-    newExpense.doctor = +document.querySelector("#actualDoctor").value
-    newExpense.otherHealthPay = +document.querySelector("#actualOtherHealth").value
-    newExpense.fuel = +document.querySelector("#actualFuel").value
-    newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
-    newExpense.carInsurance = +document.querySelector("#actualInsurance").value
-    newExpense.carFine = +document.querySelector("#actualCarFine").value
-    expenses[expenses.length] = newExpense
-
-    localStorage.setItem("expenses", JSON.stringify(expenses))
+  if (!foundDate)
+  {
+    let newExpense = {};
+    SaveItem(newExpense, foundDate);
+    
 
   }
 
-
-
+  
 
   /* let retrievedData = localStorage.getItem("expenses");
     let playerData = JSON.parse(retrievedData);
@@ -276,25 +231,7 @@ save.addEventListener("click", function () {
      */
 
 
-  document.querySelector("#geneFood").value = 0
-  document.querySelector("#awayFood").value = 0
-  document.querySelector("#cinema").value = 0
-  document.querySelector("#sport").value = 0
-  document.querySelector("#gym").value = 0
-  document.querySelector("#nightOut").value = 0
-  document.querySelector("#trip").value = 0
-  document.querySelector("#elect").value = 0
-  document.querySelector("#water").value = 0
-  document.querySelector("#income").value = 0
-  document.querySelector("#net").value = 0
-  document.querySelector("#otherPay").value = 0
-  document.querySelector("#pharm").value = 0
-  document.querySelector("#doctor").value = 0
-  document.querySelector("#otherHealth").value = 0
-  document.querySelector("#Fuel").value = 0
-  document.querySelector("#maintenance").value = 0
-  document.querySelector("#insurance").value = 0
-  document.querySelector("#carFine").value = 0
+  
 
   //making sure it still is an array
   //alert(playerData.length);
@@ -316,4 +253,90 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     }
   })
+}
+
+function SaveItem(savedItem, foundDate = true)
+{
+        savedItem.date = document.querySelector("#date").value;
+        savedItem.generalFood = +document.querySelector("#actualFood").value
+        savedItem.restaurant = +document.querySelector("#actualAwayFood").value
+        savedItem.electricity = +document.querySelector("#actualElect").value
+        savedItem.water = +document.querySelector("#actualWater").value
+        savedItem.income = +document.querySelector("#actualIncome").value
+        savedItem.internet = +document.querySelector("#actualNet").value
+        savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
+        savedItem.movies = +document.querySelector("#actualCin").value
+        savedItem.sports = +document.querySelector("#actualSport").value
+        savedItem.gym = +document.querySelector("#actualGym").value
+        savedItem.nightOut = +document.querySelector("#actualOut").value
+        savedItem.trip = +document.querySelector("#actualTrip").value
+        savedItem.pharm = +document.querySelector("#actualPharm").value
+        savedItem.doctor = +document.querySelector("#actualDoctor").value
+        savedItem.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+        savedItem.fuel = +document.querySelector("#actualFuel").value
+        savedItem.carMaintenance = +document.querySelector("#actualMaintenance").value
+        savedItem.carInsurance = +document.querySelector("#actualInsurance").value
+        savedItem.carFine = +document.querySelector("#actualCarFine").value
+
+        if (!foundDate)
+        {
+          expenses[expenses.length] = savedItem;
+        }
+
+        localStorage.setItem("expenses", JSON.stringify(expenses))
+}
+
+let dataPick = document.getElementById("date");
+dataPick.onchange = function() {
+
+  let foundDate = false;
+  let savedItem;
+  let compareDate = document.querySelector("#date").value;
+  for (let i = 0; i < expenses.length; i++)
+  {
+    savedItem = expenses[i];
+
+    if (savedItem.date === compareDate)
+    {
+      foundDate = true;
+      break;
+    }
+  }
+
+  if (!foundDate)
+    ResetValues();
+  else
+    LoadData(savedItem);
+}
+
+function ResetValues()
+{
+  var elements = document.querySelectorAll("input[type=number]")
+
+  for (var i = 0, element; element = elements[i++];) {
+     element.value = 0;
+  }
+}
+
+function LoadData(savedItem)
+{
+      document.getElementById("actualFood").value = savedItem.generalFood
+      document.querySelector("#actualAwayFood").value = savedItem.restaurant
+      document.querySelector("#actualCin").value = savedItem.movies
+      document.querySelector("#actualSport").value = savedItem.sports
+      document.querySelector("#actualGym").value = savedItem.gym
+      document.querySelector("#actualOut").value = savedItem.nightOut
+      document.querySelector("#actualTrip").value = savedItem.trip
+      document.querySelector("#actualElect").value = savedItem.electricity
+      document.querySelector("#actualWater").value = savedItem.water
+      document.querySelector("#actualIncome").value = savedItem.income
+      document.querySelector("#actualNet").value = savedItem.internet
+      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
+      document.querySelector("#actualPharm").value = savedItem.pharm
+      document.querySelector("#actualDoctor").value = savedItem.doctor
+      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+      document.querySelector("#actualFuel").value = savedItem.fuel
+      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+      document.querySelector("#actualInsurance").value = savedItem.carInsurance
+      document.querySelector("#actualCarFine").value = savedItem.carFine
 }
