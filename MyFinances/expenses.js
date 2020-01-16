@@ -1,7 +1,4 @@
-
-
 let compareDate = document.querySelector("#date").value
-console.log("compareDate: " + compareDate);
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -199,6 +196,7 @@ save.addEventListener("click", function () {
   document.querySelector("#actualCarFine").value = sum
 
 
+<<<<<<< HEAD
 
   
   let foundDate = false;
@@ -225,13 +223,20 @@ save.addEventListener("click", function () {
 
   }
 
+=======
+  //criação dos dados na local storage
+  if (expenses.length > 0) {
 
-})
+    for (let i = 0; i < expenses.length; i++) {
+      const savedItem = expenses[i]
 
-/*função para o botão collapse*/
-let coll = document.getElementsByClassName("collapsible");
-let i;
 
+>>>>>>> parent of 7991e12... local storage + clear field
+
+      if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
+
+
+<<<<<<< HEAD
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
@@ -249,6 +254,8 @@ for (i = 0; i < coll.length; i++) {
 function SaveItem(savedItem, foundDate = true)
 {
         savedItem.date = document.querySelector("#date").value;
+=======
+>>>>>>> parent of 7991e12... local storage + clear field
         savedItem.generalFood = +document.querySelector("#actualFood").value
         savedItem.restaurant = +document.querySelector("#actualAwayFood").value
         savedItem.electricity = +document.querySelector("#actualElect").value
@@ -269,66 +276,99 @@ function SaveItem(savedItem, foundDate = true)
         savedItem.carInsurance = +document.querySelector("#actualInsurance").value
         savedItem.carFine = +document.querySelector("#actualCarFine").value
 
-        if (!foundDate)
-        {
-          expenses[expenses.length] = savedItem;
-        }
 
         localStorage.setItem("expenses", JSON.stringify(expenses))
-}
 
+<<<<<<< HEAD
 
 let dataPick = document.getElementById("date");
 dataPick.onchange = function() {
+=======
+      }
+>>>>>>> parent of 7991e12... local storage + clear field
 
-  let foundDate = false;
-  let savedItem;
-  let compareDate = document.querySelector("#date").value;
-  for (let i = 0; i < expenses.length; i++)
-  {
-    savedItem = expenses[i];
-
-    if (savedItem.date === compareDate)
-    {
-      foundDate = true;
-      break;
     }
+
+
+
+
+
+  } else {
+    let newExpense = {}
+    newExpense.date = document.querySelector("#date").value
+    newExpense.generalFood = +document.querySelector("#actualFood").value
+    newExpense.restaurant = +document.querySelector("#actualAwayFood").value
+    newExpense.electricity = +document.querySelector("#actualElect").value
+    newExpense.water = +document.querySelector("#actualWater").value
+    newExpense.income = +document.querySelector("#actualIncome").value
+    newExpense.internet = +document.querySelector("#actualNet").value
+    newExpense.otherHousePay = +document.querySelector("#actualOtherPay").value
+    newExpense.movies = +document.querySelector("#actualCin").value
+    newExpense.sports = +document.querySelector("#actualSport").value
+    newExpense.gym = +document.querySelector("#actualGym").value
+    newExpense.nightOut = +document.querySelector("#actualOut").value
+    newExpense.trip = +document.querySelector("#actualTrip").value
+    newExpense.pharm = +document.querySelector("#actualPharm").value
+    newExpense.doctor = +document.querySelector("#actualDoctor").value
+    newExpense.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+    newExpense.fuel = +document.querySelector("#actualFuel").value
+    newExpense.carMaintenance = +document.querySelector("#actualMaintenance").value
+    newExpense.carInsurance = +document.querySelector("#actualInsurance").value
+    newExpense.carFine = +document.querySelector("#actualCarFine").value
+    expenses[expenses.length] = newExpense
+
+    localStorage.setItem("expenses", JSON.stringify(expenses))
+
   }
 
-  if (!foundDate)
-    ResetValues();
-  else
-    LoadData(savedItem);
-}
 
-function ResetValues()
-{
-  var elements = document.querySelectorAll("input[type=number]")
 
-  for (var i = 0, element; element = elements[i++];) {
-     element.value = 0;
-  }
-}
 
-function LoadData(savedItem)
-{
-      document.getElementById("actualFood").value = savedItem.generalFood
-      document.querySelector("#actualAwayFood").value = savedItem.restaurant
-      document.querySelector("#actualCin").value = savedItem.movies
-      document.querySelector("#actualSport").value = savedItem.sports
-      document.querySelector("#actualGym").value = savedItem.gym
-      document.querySelector("#actualOut").value = savedItem.nightOut
-      document.querySelector("#actualTrip").value = savedItem.trip
-      document.querySelector("#actualElect").value = savedItem.electricity
-      document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualIncome").value = savedItem.income
-      document.querySelector("#actualNet").value = savedItem.internet
-      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
-      document.querySelector("#actualPharm").value = savedItem.pharm
-      document.querySelector("#actualDoctor").value = savedItem.doctor
-      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
-      document.querySelector("#actualFuel").value = savedItem.fuel
-      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
-      document.querySelector("#actualInsurance").value = savedItem.carInsurance
-      document.querySelector("#actualCarFine").value = savedItem.carFine
+  /* let retrievedData = localStorage.getItem("expenses");
+    let playerData = JSON.parse(retrievedData);
+
+    console.log(playerData);
+     */
+
+
+  document.querySelector("#geneFood").value = 0
+  document.querySelector("#awayFood").value = 0
+  document.querySelector("#cinema").value = 0
+  document.querySelector("#sport").value = 0
+  document.querySelector("#gym").value = 0
+  document.querySelector("#nightOut").value = 0
+  document.querySelector("#trip").value = 0
+  document.querySelector("#elect").value = 0
+  document.querySelector("#water").value = 0
+  document.querySelector("#income").value = 0
+  document.querySelector("#net").value = 0
+  document.querySelector("#otherPay").value = 0
+  document.querySelector("#pharm").value = 0
+  document.querySelector("#doctor").value = 0
+  document.querySelector("#otherHealth").value = 0
+  document.querySelector("#Fuel").value = 0
+  document.querySelector("#maintenance").value = 0
+  document.querySelector("#insurance").value = 0
+  document.querySelector("#carFine").value = 0
+
+  //making sure it still is an array
+  //alert(playerData.length);
+  //console.log(playerData);
+
+})
+
+/*função para o botão collapse*/
+let coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  })
 }
