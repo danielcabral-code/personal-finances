@@ -1,7 +1,10 @@
+//colocra a data com o mes/ano atual
+document.querySelector("#date").valueAsDate = new Date();
 
 
 let compareDate = document.querySelector("#date").value
-console.log("compareDate: " + compareDate);
+//console.log("compareDate: " + compareDate);
+
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -198,10 +201,15 @@ save.addEventListener("click", function () {
   sum = actualCarFine + carFine
   document.querySelector("#actualCarFine").value = sum
 
+
+
   let foundDate = false;
   let savedItem;
   let compareDate = document.querySelector("#date").value;
 
+
+
+//ciclo for que compara se a data escolhida já existe na local storage, se existir substitui os dados, senão cria uns novos
 
   for (let i = 0; i < expenses.length; i++)
   {
@@ -210,6 +218,7 @@ save.addEventListener("click", function () {
     if (savedItem.date === compareDate)
     {
       SaveItem(savedItem);
+      alert("Dados alterados com sucesso!")
       foundDate = true;
     }
   }
@@ -218,24 +227,11 @@ save.addEventListener("click", function () {
   {
     let newExpense = {};
     SaveItem(newExpense, foundDate);
+    alert("Nova lista de despesa criada com sucesso!")
     
 
   }
 
-  
-
-  /* let retrievedData = localStorage.getItem("expenses");
-    let playerData = JSON.parse(retrievedData);
-
-    console.log(playerData);
-     */
-
-
-  
-
-  //making sure it still is an array
-  //alert(playerData.length);
-  //console.log(playerData);
 
 })
 
@@ -255,48 +251,7 @@ for (i = 0; i < coll.length; i++) {
   })
 }
 
-<<<<<<< HEAD
-let dataPick = document.getElementById("date");
-dataPick.onchange = function () {}
-
-let foundDate = false;
-let savedItem;
-compareDate = document.querySelector("#date").value;
-for (let i = 0; i < expenses.length; i++) {
-  savedItem = expenses[i];
-
-  if (savedItem.date === compareDate) {
-    foundDate = true;
-    break;
-  }
-}
-
-if (!foundDate)
-  ResetValues();
-else
-  LoadData(savedItem);
-
-function LoadData(savedItem) {
-  document.getElementById("actualFood").value = savedItem.generalFood
-  document.querySelector("#actualAwayFood").value = savedItem.restaurant
-  document.querySelector("#actualCin").value = savedItem.movies
-  document.querySelector("#actualSport").value = savedItem.sports
-  document.querySelector("#actualGym").value = savedItem.gym
-  document.querySelector("#actualOut").value = savedItem.nightOut
-  document.querySelector("#actualTrip").value = savedItem.trip
-  document.querySelector("#actualElect").value = savedItem.electricity
-  document.querySelector("#actualWater").value = savedItem.water
-  document.querySelector("#actualIncome").value = savedItem.income
-  document.querySelector("#actualNet").value = savedItem.internet
-  document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
-  document.querySelector("#actualPharm").value = savedItem.pharm
-  document.querySelector("#actualDoctor").value = savedItem.doctor
-  document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
-  document.querySelector("#actualFuel").value = savedItem.fuel
-  document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
-  document.querySelector("#actualInsurance").value = savedItem.carInsurance
-  document.querySelector("#actualCarFine").value = savedItem.carFine
-=======
+// função que guarda os valores na localstorage
 function SaveItem(savedItem, foundDate = true)
 {
         savedItem.date = document.querySelector("#date").value;
@@ -328,7 +283,43 @@ function SaveItem(savedItem, foundDate = true)
         localStorage.setItem("expenses", JSON.stringify(expenses))
 }
 
+//função que vai meter os inputs todos a zero se nao existir a data na localstorage
+function ResetValues()
+{
+  var elements = document.querySelectorAll("input[type=number]")
+
+  for (var i = 0, element; element = elements[i++];) {
+     element.value = 0;
+  }
+}
+
+//função para lê os dados na local storage
+function LoadData(savedItem)
+{
+      document.getElementById("actualFood").value = savedItem.generalFood
+      document.querySelector("#actualAwayFood").value = savedItem.restaurant
+      document.querySelector("#actualCin").value = savedItem.movies
+      document.querySelector("#actualSport").value = savedItem.sports
+      document.querySelector("#actualGym").value = savedItem.gym
+      document.querySelector("#actualOut").value = savedItem.nightOut
+      document.querySelector("#actualTrip").value = savedItem.trip
+      document.querySelector("#actualElect").value = savedItem.electricity
+      document.querySelector("#actualWater").value = savedItem.water
+      document.querySelector("#actualIncome").value = savedItem.income
+      document.querySelector("#actualNet").value = savedItem.internet
+      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
+      document.querySelector("#actualPharm").value = savedItem.pharm
+      document.querySelector("#actualDoctor").value = savedItem.doctor
+      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+      document.querySelector("#actualFuel").value = savedItem.fuel
+      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+      document.querySelector("#actualInsurance").value = savedItem.carInsurance
+      document.querySelector("#actualCarFine").value = savedItem.carFine
+}
+
 let dataPick = document.getElementById("date");
+
+//função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage caso existam
 dataPick.onchange = function() {
 
   let foundDate = false;
@@ -351,35 +342,7 @@ dataPick.onchange = function() {
     LoadData(savedItem);
 }
 
-function ResetValues()
-{
-  var elements = document.querySelectorAll("input[type=number]")
 
-  for (var i = 0, element; element = elements[i++];) {
-     element.value = 0;
-  }
-}
 
-function LoadData(savedItem)
-{
-      document.getElementById("actualFood").value = savedItem.generalFood
-      document.querySelector("#actualAwayFood").value = savedItem.restaurant
-      document.querySelector("#actualCin").value = savedItem.movies
-      document.querySelector("#actualSport").value = savedItem.sports
-      document.querySelector("#actualGym").value = savedItem.gym
-      document.querySelector("#actualOut").value = savedItem.nightOut
-      document.querySelector("#actualTrip").value = savedItem.trip
-      document.querySelector("#actualElect").value = savedItem.electricity
-      document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualIncome").value = savedItem.income
-      document.querySelector("#actualNet").value = savedItem.internet
-      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
-      document.querySelector("#actualPharm").value = savedItem.pharm
-      document.querySelector("#actualDoctor").value = savedItem.doctor
-      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
-      document.querySelector("#actualFuel").value = savedItem.fuel
-      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
-      document.querySelector("#actualInsurance").value = savedItem.carInsurance
-      document.querySelector("#actualCarFine").value = savedItem.carFine
->>>>>>> parent of 995db21... Revert "local storage + clear field"
-}
+
+

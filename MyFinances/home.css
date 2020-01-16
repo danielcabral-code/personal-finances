@@ -61,3 +61,19 @@
     text-align: left;
   }
 }
+
+.currentMoney {
+  margin-top: 50px;
+ 
+  text-align: center;
+}
+span{
+  font-size: 40px;
+}
+#addMoney{
+
+  width: 170px;
+  height:30px;
+  text-align: center;
+  border: rgb(0, 0, 0) 0.5px solid;
+}
