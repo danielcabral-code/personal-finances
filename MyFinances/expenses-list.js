@@ -17,23 +17,15 @@ function selectExpense() {
   
     for (let i = 0; i < expenses.length; i++) {
         let savedItem = expenses[i]
-       console.log(savedItem);
-       
-        
-      
-
-       
-     
+       console.log(savedItem);  
+ 
       }
       
       
    
       arr.forEach(function (savedItem) {
             
-    
-    
-    
-           
+  
         let option = document.createElement("option");
         option.text = savedItem.date;
         list.add(option);

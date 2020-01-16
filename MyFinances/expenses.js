@@ -317,3 +317,45 @@ for (i = 0; i < coll.length; i++) {
     }
   })
 }
+
+let dataPick = document.getElementById("date");
+dataPick.onchange = function () {}
+
+let foundDate = false;
+let savedItem;
+compareDate = document.querySelector("#date").value;
+for (let i = 0; i < expenses.length; i++) {
+  savedItem = expenses[i];
+
+  if (savedItem.date === compareDate) {
+    foundDate = true;
+    break;
+  }
+}
+
+if (!foundDate)
+  ResetValues();
+else
+  LoadData(savedItem);
+
+function LoadData(savedItem) {
+  document.getElementById("actualFood").value = savedItem.generalFood
+  document.querySelector("#actualAwayFood").value = savedItem.restaurant
+  document.querySelector("#actualCin").value = savedItem.movies
+  document.querySelector("#actualSport").value = savedItem.sports
+  document.querySelector("#actualGym").value = savedItem.gym
+  document.querySelector("#actualOut").value = savedItem.nightOut
+  document.querySelector("#actualTrip").value = savedItem.trip
+  document.querySelector("#actualElect").value = savedItem.electricity
+  document.querySelector("#actualWater").value = savedItem.water
+  document.querySelector("#actualIncome").value = savedItem.income
+  document.querySelector("#actualNet").value = savedItem.internet
+  document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
+  document.querySelector("#actualPharm").value = savedItem.pharm
+  document.querySelector("#actualDoctor").value = savedItem.doctor
+  document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+  document.querySelector("#actualFuel").value = savedItem.fuel
+  document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+  document.querySelector("#actualInsurance").value = savedItem.carInsurance
+  document.querySelector("#actualCarFine").value = savedItem.carFine
+}
