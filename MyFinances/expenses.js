@@ -8,41 +8,41 @@ if (localStorage.getItem('expenses')) {
 
 
 
-  for (let i = 0; i < expenses.length; i++) {
-    const savedItem = expenses[i]
+//   for (let i = 0; i < expenses.length; i++) {
+//     const savedItem = expenses[i]
 
 
 
-    if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
+//     if (i === expenses.length - 1   /* savedItem.date === compareDate */) {
 
-      //console.log(savedItem.date);
+//       //console.log(savedItem.date);
 
-      document.getElementById("actualFood").value = savedItem.generalFood
-      document.querySelector("#actualAwayFood").value = savedItem.restaurant
-      document.querySelector("#actualCin").value = savedItem.movies
-      document.querySelector("#actualSport").value = savedItem.sports
-      document.querySelector("#actualGym").value = savedItem.gym
-      document.querySelector("#actualOut").value = savedItem.nightOut
-      document.querySelector("#actualTrip").value = savedItem.trip
-      document.querySelector("#actualElect").value = savedItem.electricity
-      document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualIncome").value = savedItem.income
-      document.querySelector("#actualNet").value = savedItem.internet
-      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
-      document.querySelector("#actualPharm").value = savedItem.pharm
-      document.querySelector("#actualDoctor").value = savedItem.doctor
-      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
-      document.querySelector("#actualFuel").value = savedItem.fuel
-      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
-      document.querySelector("#actualInsurance").value = savedItem.carInsurance
-      document.querySelector("#actualCarFine").value = savedItem.carFine
+//       document.getElementById("actualFood").value = savedItem.generalFood
+//       document.querySelector("#actualAwayFood").value = savedItem.restaurant
+//       document.querySelector("#actualCin").value = savedItem.movies
+//       document.querySelector("#actualSport").value = savedItem.sports
+//       document.querySelector("#actualGym").value = savedItem.gym
+//       document.querySelector("#actualOut").value = savedItem.nightOut
+//       document.querySelector("#actualTrip").value = savedItem.trip
+//       document.querySelector("#actualElect").value = savedItem.electricity
+//       document.querySelector("#actualWater").value = savedItem.water
+//       document.querySelector("#actualIncome").value = savedItem.income
+//       document.querySelector("#actualNet").value = savedItem.internet
+//       document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
+//       document.querySelector("#actualPharm").value = savedItem.pharm
+//       document.querySelector("#actualDoctor").value = savedItem.doctor
+//       document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+//       document.querySelector("#actualFuel").value = savedItem.fuel
+//       document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+//       document.querySelector("#actualInsurance").value = savedItem.carInsurance
+//       document.querySelector("#actualCarFine").value = savedItem.carFine
 
-    }
-  }
+//     }
+//   }
 
 
 } else {
-  expenses = []
+     expenses = []
 }
 
 /* variavel que soma o nosso gasto atual*/
@@ -198,6 +198,9 @@ save.addEventListener("click", function () {
   sum = actualCarFine + carFine
   document.querySelector("#actualCarFine").value = sum
 
+
+
+  
   let foundDate = false;
   let savedItem;
   let compareDate = document.querySelector("#date").value;
@@ -222,20 +225,6 @@ save.addEventListener("click", function () {
 
   }
 
-  
-
-  /* let retrievedData = localStorage.getItem("expenses");
-    let playerData = JSON.parse(retrievedData);
-
-    console.log(playerData);
-     */
-
-
-  
-
-  //making sure it still is an array
-  //alert(playerData.length);
-  //console.log(playerData);
 
 })
 
@@ -254,6 +243,8 @@ for (i = 0; i < coll.length; i++) {
     }
   })
 }
+
+
 
 function SaveItem(savedItem, foundDate = true)
 {
@@ -285,6 +276,7 @@ function SaveItem(savedItem, foundDate = true)
 
         localStorage.setItem("expenses", JSON.stringify(expenses))
 }
+
 
 let dataPick = document.getElementById("date");
 dataPick.onchange = function() {
