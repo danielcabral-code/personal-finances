@@ -9,23 +9,29 @@ function barFunction() {
 }
 
 
-let money =[]
+let money = 0
 
-if (localStorage.getItem('currentMoney')) {
-    money = JSON.parse(localStorage.getItem('currentMoney'))
-
+if (localStorage.getItem('money')) {
+    money = JSON.parse(localStorage.getItem('money'))
+    document.querySelector("#currentMoney").value = money
 
 } else {
-    money =[]
+    money
 }
+
 
 
 document.getElementById("btnAddMoney").addEventListener("click", function () {
 
-    money= +document.getElementById("addMoney").value + money
+    let mon = +document.querySelector("#currentMoney").value
+    let actmon = +document.querySelector("#addMoney").value
+    sum = mon + actmon
 
+    document.querySelector("#currentMoney").value = sum
 
+    money += parseInt(document.getElementById("addMoney").value)
     localStorage.setItem("money", JSON.stringify(money))
-
-    document.querySelector("#currentMoney").value =  money
+    document.querySelector("#addMoney").value = null
+    
+     
 })
