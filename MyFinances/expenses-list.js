@@ -17,23 +17,15 @@ function selectExpense() {
   
     for (let i = 0; i < expenses.length; i++) {
         let savedItem = expenses[i]
-<<<<<<< HEAD
        console.log(savedItem);  
  
-=======
-       console.log(savedItem);
->>>>>>> parent of 995db21... Revert "local storage + clear field"
       }
       
       
    
       arr.forEach(function (savedItem) {
-<<<<<<< HEAD
             
   
-=======
-     
->>>>>>> parent of 995db21... Revert "local storage + clear field"
         let option = document.createElement("option");
         option.text = savedItem.date;
         list.add(option);

@@ -56,8 +56,8 @@ let sum = 0
 save.addEventListener("click", function () {
 
   //calculo da alimentação geral
-  let generalFood = +document.querySelector("#geneFood").value
-  let actF = +document.querySelector("#actualFood").value
+  const generalFood = +document.querySelector("#geneFood").value
+  const actF = +document.querySelector("#actualFood").value
   sum = actF + generalFood
   document.querySelector("#actualFood").value = sum
 
@@ -68,7 +68,6 @@ save.addEventListener("click", function () {
   sum = actAFood + awayFood
   document.querySelector("#actualAwayFood").value = sum
 
-  //botao que guarda os valores da secção de lazer
 
   //calculo dos gastos em cinema
   let movies = +document.querySelector("#cinema").value
@@ -105,7 +104,7 @@ save.addEventListener("click", function () {
 
 
 
-  //botao que guarda os valores da secção da casa
+  
 
 
   //calculo dos gastos em luz
