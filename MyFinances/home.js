@@ -21,7 +21,7 @@ if (localStorage.getItem('money')) {
 
 
 
-document.getElementById("btnAddMoney").addEventListener("click", function () {
+/* document.getElementById("btnAddMoney").addEventListener("click", function () {
 
     let mon = +document.querySelector("#currentMoney").value
     let actmon = +document.querySelector("#addMoney").value
@@ -34,4 +34,4 @@ document.getElementById("btnAddMoney").addEventListener("click", function () {
     document.querySelector("#addMoney").value = null
     
      
-})
+}) */
