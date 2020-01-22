@@ -2,10 +2,6 @@ let expenses = [];
 if (localStorage.getItem('expenses')) {
     expenses = JSON.parse(localStorage.getItem('expenses'))
 
-   
-
-
-  
 } else {
     alert("vazio")
 }

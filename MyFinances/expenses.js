@@ -231,8 +231,7 @@ save.addEventListener("click", function () {
   money = money - total
   localStorage.setItem('money', JSON.stringify(money))
 
-
-
+  location.reload();
 })
 
 /*função para o botão collapse*/
@@ -274,7 +273,7 @@ function SaveItem(savedItem, foundDate = true) {
   savedItem.carInsurance = +document.querySelector("#actualInsurance").value
   savedItem.carFine = +document.querySelector("#actualCarFine").value
 
-  document.querySelectorAll("input[class=actualExpense]").value = 0
+
 
   if (!foundDate) {
     expenses[expenses.length] = savedItem;

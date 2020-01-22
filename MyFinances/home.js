@@ -31,12 +31,19 @@ if (localStorage.getItem('money')) {
 
     let mon = +document.querySelector("#currentMoney").value
     let actmon = +document.querySelector("#addMoney").value
+    
     sum = mon + actmon
 
     document.querySelector("#currentMoney").value = sum
 
     money += parseInt(document.getElementById("addMoney").value)
     localStorage.setItem("money", JSON.stringify(money))
+    if (money >= 0) {
+
+        document.querySelector("#currentMoney").style.color ="green"
+    } else {
+        document.querySelector("#currentMoney").style.color ="red"
+    }
     document.querySelector("#addMoney").value = null
     
      
