@@ -15,13 +15,19 @@ if (localStorage.getItem('money')) {
     money = JSON.parse(localStorage.getItem('money'))
     document.querySelector("#currentMoney").value = money
 
+    if (money >= 0) {
+
+        document.querySelector("#currentMoney").style.color ="green"
+    } else {
+        document.querySelector("#currentMoney").style.color ="red"
+    }
 } else {
     money
 }
 
 
 
-/* document.getElementById("btnAddMoney").addEventListener("click", function () {
+ document.getElementById("btnAddMoney").addEventListener("click", function () {
 
     let mon = +document.querySelector("#currentMoney").value
     let actmon = +document.querySelector("#addMoney").value
@@ -34,4 +40,4 @@ if (localStorage.getItem('money')) {
     document.querySelector("#addMoney").value = null
     
      
-}) */
+}) 
