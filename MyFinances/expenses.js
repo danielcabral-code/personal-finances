@@ -1,9 +1,16 @@
-//colocra a data com o mes/ano atual
+//coloca a data com o mes/ano atual
 document.querySelector("#date").valueAsDate = new Date();
-
 
 let compareDate = document.querySelector("#date").value
 //console.log("compareDate: " + compareDate);
+
+if (localStorage.getItem('money')) {
+  money = JSON.parse(localStorage.getItem('money'))
+
+
+} else {
+  money = 0
+}
 
 let expenses = [];
 if (localStorage.getItem('expenses')) {
@@ -52,14 +59,17 @@ if (localStorage.getItem('expenses')) {
 let sum = 0
 
 
+let totalMoney = 0
+
 
 save.addEventListener("click", function () {
 
   //calculo da alimentação geral
-  const generalFood = +document.querySelector("#geneFood").value
-  const actF = +document.querySelector("#actualFood").value
+  let generalFood = +document.querySelector("#geneFood").value
+  let actF = +document.querySelector("#actualFood").value
   sum = actF + generalFood
   document.querySelector("#actualFood").value = sum
+
 
 
   //calculo dos gastos em restaurante
@@ -103,10 +113,6 @@ save.addEventListener("click", function () {
   document.querySelector("#actualTrip").value = sum
 
 
-
-  
-
-
   //calculo dos gastos em luz
   let elect = +document.querySelector("#elect").value
   let actElect = +document.querySelector("#actualElect").value
@@ -143,9 +149,6 @@ save.addEventListener("click", function () {
   document.querySelector("#actualOtherPay").value = sum
 
 
-  //botao que guarda os valores da secção de saude
-
-
   //calculo da farmacia
   let pharm = +document.querySelector("#pharm").value
   let actualPharm = +document.querySelector("#actualPharm").value
@@ -166,10 +169,6 @@ save.addEventListener("click", function () {
   let actualOtherHealth = +document.querySelector("#actualOtherHealth").value
   sum = actualOtherHealth + otherHealth
   document.querySelector("#actualOtherHealth").value = sum
-
-
-
-
 
 
   //calculo do combustivel
@@ -208,28 +207,30 @@ save.addEventListener("click", function () {
 
 
 
-//ciclo for que compara se a data escolhida já existe na local storage, se existir substitui os dados, senão cria uns novos
+  //ciclo for que compara se a data escolhida já existe na local storage, se existir substitui os dados, senão cria uns novos
 
-  for (let i = 0; i < expenses.length; i++)
-  {
+  for (let i = 0; i < expenses.length; i++) {
     savedItem = expenses[i];
 
-    if (savedItem.date === compareDate)
-    {
+    if (savedItem.date === compareDate) {
       SaveItem(savedItem);
       alert("Dados alterados com sucesso!")
       foundDate = true;
     }
   }
 
-  if (!foundDate)
-  {
+  if (!foundDate) {
     let newExpense = {};
     SaveItem(newExpense, foundDate);
     alert("Nova lista de despesa criada com sucesso!")
-    
+
 
   }
+
+  total = generalFood + awayFood + movies + sports + gym + nightOut + trip + elect + water + income + net + otherPay + pharm + doctor + otherHealth + Fuel + maintenance + insurance + carFine
+  money = money - total
+  localStorage.setItem('money', JSON.stringify(money))
+
 
 
 })
@@ -251,85 +252,81 @@ for (i = 0; i < coll.length; i++) {
 }
 
 // função que guarda os valores na localstorage
-function SaveItem(savedItem, foundDate = true)
-{
-        savedItem.date = document.querySelector("#date").value;
-        savedItem.generalFood = +document.querySelector("#actualFood").value
-        savedItem.restaurant = +document.querySelector("#actualAwayFood").value
-        savedItem.electricity = +document.querySelector("#actualElect").value
-        savedItem.water = +document.querySelector("#actualWater").value
-        savedItem.income = +document.querySelector("#actualIncome").value
-        savedItem.internet = +document.querySelector("#actualNet").value
-        savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
-        savedItem.movies = +document.querySelector("#actualCin").value
-        savedItem.sports = +document.querySelector("#actualSport").value
-        savedItem.gym = +document.querySelector("#actualGym").value
-        savedItem.nightOut = +document.querySelector("#actualOut").value
-        savedItem.trip = +document.querySelector("#actualTrip").value
-        savedItem.pharm = +document.querySelector("#actualPharm").value
-        savedItem.doctor = +document.querySelector("#actualDoctor").value
-        savedItem.otherHealthPay = +document.querySelector("#actualOtherHealth").value
-        savedItem.fuel = +document.querySelector("#actualFuel").value
-        savedItem.carMaintenance = +document.querySelector("#actualMaintenance").value
-        savedItem.carInsurance = +document.querySelector("#actualInsurance").value
-        savedItem.carFine = +document.querySelector("#actualCarFine").value
+function SaveItem(savedItem, foundDate = true) {
+  savedItem.date = document.querySelector("#date").value;
+  savedItem.generalFood = +document.querySelector("#actualFood").value
+  savedItem.restaurant = +document.querySelector("#actualAwayFood").value
+  savedItem.electricity = +document.querySelector("#actualElect").value
+  savedItem.water = +document.querySelector("#actualWater").value
+  savedItem.income = +document.querySelector("#actualIncome").value
+  savedItem.internet = +document.querySelector("#actualNet").value
+  savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
+  savedItem.movies = +document.querySelector("#actualCin").value
+  savedItem.sports = +document.querySelector("#actualSport").value
+  savedItem.gym = +document.querySelector("#actualGym").value
+  savedItem.nightOut = +document.querySelector("#actualOut").value
+  savedItem.trip = +document.querySelector("#actualTrip").value
+  savedItem.pharm = +document.querySelector("#actualPharm").value
+  savedItem.doctor = +document.querySelector("#actualDoctor").value
+  savedItem.otherHealthPay = +document.querySelector("#actualOtherHealth").value
+  savedItem.fuel = +document.querySelector("#actualFuel").value
+  savedItem.carMaintenance = +document.querySelector("#actualMaintenance").value
+  savedItem.carInsurance = +document.querySelector("#actualInsurance").value
+  savedItem.carFine = +document.querySelector("#actualCarFine").value
 
-        if (!foundDate)
-        {
-          expenses[expenses.length] = savedItem;
-        }
+  document.querySelectorAll("input[class=actualExpense]").value = 0
 
-        localStorage.setItem("expenses", JSON.stringify(expenses))
+  if (!foundDate) {
+    expenses[expenses.length] = savedItem;
+  }
+
+  localStorage.setItem("expenses", JSON.stringify(expenses))
 }
 
 //função que vai meter os inputs todos a zero se nao existir a data na localstorage
-function ResetValues()
-{
+function ResetValues() {
   var elements = document.querySelectorAll("input[type=number]")
 
   for (var i = 0, element; element = elements[i++];) {
-     element.value = 0;
+    element.value = 0;
   }
 }
 
 //função para lê os dados na local storage
-function LoadData(savedItem)
-{
-      document.getElementById("actualFood").value = savedItem.generalFood
-      document.querySelector("#actualAwayFood").value = savedItem.restaurant
-      document.querySelector("#actualCin").value = savedItem.movies
-      document.querySelector("#actualSport").value = savedItem.sports
-      document.querySelector("#actualGym").value = savedItem.gym
-      document.querySelector("#actualOut").value = savedItem.nightOut
-      document.querySelector("#actualTrip").value = savedItem.trip
-      document.querySelector("#actualElect").value = savedItem.electricity
-      document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualIncome").value = savedItem.income
-      document.querySelector("#actualNet").value = savedItem.internet
-      document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
-      document.querySelector("#actualPharm").value = savedItem.pharm
-      document.querySelector("#actualDoctor").value = savedItem.doctor
-      document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
-      document.querySelector("#actualFuel").value = savedItem.fuel
-      document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
-      document.querySelector("#actualInsurance").value = savedItem.carInsurance
-      document.querySelector("#actualCarFine").value = savedItem.carFine
+function LoadData(savedItem) {
+  document.getElementById("actualFood").value = savedItem.generalFood
+  document.querySelector("#actualAwayFood").value = savedItem.restaurant
+  document.querySelector("#actualCin").value = savedItem.movies
+  document.querySelector("#actualSport").value = savedItem.sports
+  document.querySelector("#actualGym").value = savedItem.gym
+  document.querySelector("#actualOut").value = savedItem.nightOut
+  document.querySelector("#actualTrip").value = savedItem.trip
+  document.querySelector("#actualElect").value = savedItem.electricity
+  document.querySelector("#actualWater").value = savedItem.water
+  document.querySelector("#actualIncome").value = savedItem.income
+  document.querySelector("#actualNet").value = savedItem.internet
+  document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
+  document.querySelector("#actualPharm").value = savedItem.pharm
+  document.querySelector("#actualDoctor").value = savedItem.doctor
+  document.querySelector("#actualOtherHealth").value = savedItem.otherHealthPay
+  document.querySelector("#actualFuel").value = savedItem.fuel
+  document.querySelector("#actualMaintenance").value = savedItem.carMaintenance
+  document.querySelector("#actualInsurance").value = savedItem.carInsurance
+  document.querySelector("#actualCarFine").value = savedItem.carFine
 }
 
 let dataPick = document.getElementById("date");
 
 //função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage caso existam
-dataPick.onchange = function() {
+dataPick.onchange = function () {
 
   let foundDate = false;
   let savedItem;
   let compareDate = document.querySelector("#date").value;
-  for (let i = 0; i < expenses.length; i++)
-  {
+  for (let i = 0; i < expenses.length; i++) {
     savedItem = expenses[i];
 
-    if (savedItem.date === compareDate)
-    {
+    if (savedItem.date === compareDate) {
       foundDate = true;
       break;
     }
@@ -340,8 +337,3 @@ dataPick.onchange = function() {
   else
     LoadData(savedItem);
 }
-
-
-
-
-

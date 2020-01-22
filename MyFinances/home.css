@@ -62,7 +62,7 @@
   }
 }
 
-.currentMoney {
+.Money {
   margin-top: 50px;
  
   text-align: center;
@@ -76,4 +76,14 @@ span{
   height:30px;
   text-align: center;
   border: rgb(0, 0, 0) 0.5px solid;
+}
+
+#currentMoney{
+  border: none;
+  text-align: center;
+  font-size: 50px;
+  background-color: white;
+  
+  
+
 }
