@@ -46,6 +46,9 @@ for (i = 0; i < coll.length; i++) {
   })
 }
 
+//coloca a data com o mes/ano atual
+document.querySelector("#date").valueAsDate = new Date();
+
 // Botão guardar orçamentos
 saveButton = document.querySelector(".saveButtonTotal")
 let foodBudget = document.getElementById("foodBudget")
@@ -67,3 +70,31 @@ saveButton.addEventListener("click", function () {
   vehicleBudgetLabel.innerHTML = ` ${vehicleBudget.value}€`
   totalMaxBudget.innerHTML = ` ${+foodBudget.value + +homeBudget.value + +lazerBudget.value + +healthBudget.value + +vehicleBudget.value}€`
 })
+
+let expenses;
+
+if (localStorage.getItem('expenses')) {
+  expenses = JSON.parse(localStorage.getItem('expenses'))
+  console.log(expenses);
+  console.log(expenses[0].date);
+  
+}
+
+let dataPick = document.getElementById("date");
+
+//função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage caso existam
+dataPick.onchange = function () {
+
+  let savedItem;
+  let compareDate = document.querySelector("#date").value;
+  for (let i = 0; i < expenses.length; i++) {
+    savedItem = expenses[i];
+
+    if (savedItem.date === compareDate) {
+      console.log("ola");
+      
+      foundDate = true;
+      break;
+    }
+  }
+}
