@@ -37,62 +37,56 @@
         <!-- Alimentação -->
         <button type="button" class="collapsible">Alimentação</button>
         <div class="content">
-                <p class="insideContent">Alimentação - Orçamento:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Alimentação - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="foodBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input type="number" value="0" class="actualExpense" id="food"
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="food"
                                 onfocus="this.value=''"></input>€ /<label id="alimentacaoMaxBudget"></label>
-                        <div class="saveButton"><button class="cssButton" id="btnFood">Guardar</button></div>
                 </p>
         </div>
 
         <!-- Habitação -->
         <button type="button" class="collapsible">Habitação</button>
         <div class="content">
-                <p class="insideContent">Habitação - Orçamento:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Habitação - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="homeBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input type="number" value="0" class="actualExpense" id="home"
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="home"
                                 onfocus="this.value=''"></input>€ /<label id="habitacaoMaxBudget"></label>
-                        <div class="saveButton"><button class="cssButton" id="btnHome">Guardar</button></div>
                 </p>
         </div>
 
         <!-- Lazer -->
         <button type="button" class="collapsible">Lazer</button>
         <div class="content">
-                <p class="insideContent">Lazer - Orçamento:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Lazer - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="entertainmentBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
                                 id="entertainment" onfocus="this.value=''"></input>€ /<label
                                 id="lazerMaxBudget"></label>
-                        <div class="saveButton"><button class="cssButton" id="btnLazer">Guardar</button>
-                        </div>
                 </p>
         </div>
 
         <!-- Saúde -->
         <button type="button" class="collapsible">Saúde</button>
         <div class="content">
-                <p class="insideContent">Saúde - Orçamento:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Saúde - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="healthBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input type="number" value="0" class="actualExpense" id="health"
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="health"
                                 onfocus="this.value=''"></input>€ /<label id="saudeMaxBudget"></label>
-                        <div class="saveButton"><button class="cssButton" id="btnHealth">Guardar</button> </div>
                 </p>
         </div>
 
         <!-- Veículo -->
         <button type="button" class="collapsible">Veículo</button>
         <div class="content">
-                <p class="insideContent">Veículo - Orçamento:<input type="number" value="0" class="actualExpense"
+                <p class="insideContent">Veículo - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="vehicleBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input type="number" value="0" class="actualExpense" id="vehicle"
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="vehicle"
                                 onfocus="this.value=''"></input>€ /<label id="vehicleMaxBudget"></label>
-                        <div class="saveButton"><button class="cssButton" id="btnVehicle">Guardar</button></div>
                 </p>
         </div>
 
@@ -101,6 +95,11 @@
         <div class="content">
                 <p class="insideContent">Gasto Total:<label id="totalActual"></label> &nbsp;€</p>
                 <p class="insideContent">Orçamento Total:<label id="totalMaxBudget"></label></p>
+        </div>
+
+        <!-- Save Button -->
+        <div class="saveButtonDiv">
+                <button class="saveButtonTotal">Guardar</button>
         </div>
 
         <!-- Links JS -->
