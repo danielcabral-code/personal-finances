@@ -16,6 +16,11 @@ input, p {
     background-color: lightblue;
 }
 
+/* #homeTopNav {
+    position: fixed;
+    top: 0;
+} */
+
 /* Calendário */
 #date {
     border: none;
@@ -28,7 +33,7 @@ input, p {
     background-color: lightblue;
     margin-left: -8px;
     width: 355px;
-    height: 45px;
+    height: 44px;
 }
 
 /* Calendário */
@@ -42,13 +47,22 @@ input, p {
 }
 
 /* Formatação dentro dos botões collapse */
-.actualExpense {
-    margin-left: 10px;
+.textBudget {
     width: 38px;
     height: 15px;
     text-align: right;
     border: none;
-    border-bottom: 1px solid black;
+    border: none;
+    outline: none;
+}
+
+/* Formatação dentro dos botões collapse */
+.textActualExpense {
+    width: 38px;
+    height: 15px;
+    text-align: right;
+    border: none;
+    border: none;
     outline: none;
 }
 
@@ -64,7 +78,7 @@ input, p {
     outline: none;
     font-size: 18px;
     margin-left: -8px;
-    height: 90px;
+    height: 78px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -84,7 +98,7 @@ input, p {
     outline: none;
     font-size: 18px;
     margin-left: -8px;
-    height: 90px;
+    height: 78px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -101,7 +115,7 @@ input, p {
     transition: max-height 0.2s ease-out;
     background-color: lightblue;
     margin-left: -8px;
-    width: 375px;
+    width: 300px;
 }
 
 /* Cor dentro dos botões collapse */
@@ -109,19 +123,20 @@ input, p {
     background-color: lightblue;
 }
 
-/* Botões gravar orçamento */
-.cssButton {
+/* Div do botão */
+.saveButtonDiv {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Botão guardar info */
+.saveButtonTotal {
     background-color:green;
     border: none;
     color: white;
-    height: 40px;
-    width: 100px;
+    height: 53px;
+    width: 355px;
     border-radius: 10px;
     text-align: center;
-}
-
-/* Botões gravar orçamento */
-.saveButton {
-    text-align: end;
-    padding-right: 35px;
 }
