@@ -8,6 +8,35 @@ function barFunction() {
     }
 }
 
+async function convert() {
+    const response = await fetch("https://api.exchangeratesapi.io/latest?base=GBP&symbols=EUR,USD")
+    myJson = await response.json()
+    
+    console.log(JSON.stringify(myJson));
+    
+    
+    for(first in myJson) {
+        if (first == "rates") {
+            // array.rates exists
+            for(k in myJson.rates) {
+                 // k being key
+                 var thisValue = myJson.rates[k];
+                 console.log(thisValue);
+            }
+        }
+        console.log(myJson[first]);
+    } 
+      
+}
+
+
+
+
+
+
+
+
+convert();
 
 let money = 0
 
