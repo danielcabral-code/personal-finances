@@ -111,3 +111,13 @@ date.onchange = function () {
     }
   }
 }
+
+// Função para escolher cor das despesas conforme ultrapasse ou não o orçamento - não funciona ainda
+function checkOverflow() {
+  if (actualExpenseFood.value > foodBudgetLabel.value) {
+    actualExpenseFood.style.color = "red"
+  } else if (actualExpenseFood.value <= foodBudgetLabel.value) {
+    actualExpenseFood.style.color = "green"
+  }
+}
+checkOverflow()
