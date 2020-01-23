@@ -11,7 +11,8 @@ body {
 }
 
 /* Fonte dos inputs + ps */
-input, p {
+input,
+p {
     font-size: 18px;
     background-color: lightblue;
 }
@@ -43,12 +44,12 @@ input, p {
 
 /* Menu dos botões collapse */
 .menu {
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 /* Formatação dentro dos botões collapse */
 .textBudget {
-    width: 38px;
+    width: 48px;
     height: 15px;
     text-align: right;
     border: none;
@@ -58,12 +59,13 @@ input, p {
 
 /* Formatação dentro dos botões collapse */
 .textActualExpense {
-    width: 38px;
+    width: 50px;
     height: 15px;
     text-align: right;
     border: none;
     border: none;
     outline: none;
+    color: black;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -82,8 +84,9 @@ input, p {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-    background-color:lightseagreen;
+.active,
+.collapsible:hover {
+    background-color: lightseagreen;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -103,12 +106,12 @@ input, p {
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .collapsibleTotal:hover {
-    background-color:#4CAF50;
+    background-color: #4CAF50;
 }
-  
+
 /* Style the collapsible content. Note: hidden by default */
 .content {
-    padding: 0 18px; 
+    padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
@@ -132,11 +135,22 @@ input, p {
 
 /* Botão guardar info */
 .saveButtonTotal {
-    background-color:green;
+    background-color: green;
     border: none;
     color: white;
     height: 53px;
     width: 355px;
     border-radius: 10px;
     text-align: center;
+}
+
+/* Alinhamento valores dentro das tabs */
+.cssMaxBudget {
+    width: 46px;
+    height: 15px;
+    text-align: right;
+    border: none;
+    border: none;
+    outline: none;
+    color: black;
 }

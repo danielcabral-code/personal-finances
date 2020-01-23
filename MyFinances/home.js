@@ -26,8 +26,9 @@ if (localStorage.getItem('money')) {
 }
 
 
-
- document.getElementById("btnAddMoney").addEventListener("click", function () {
+let btnAddMoney = document.getElementById("btnAddMoney")
+ 
+btnAddMoney.addEventListener("click", function () {
 
     let mon = +document.querySelector("#currentMoney").value
     let actmon = +document.querySelector("#addMoney").value

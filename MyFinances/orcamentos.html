@@ -40,8 +40,9 @@
                 <p class="insideContent">Alimentação - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="foodBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="food"
-                                onfocus="this.value=''"></input>€ /<label id="alimentacaoMaxBudget"></label>
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
+                                id="food" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
+                                id="alimentacaoMaxBudget" value="0">€</input>
                 </p>
         </div>
 
@@ -51,8 +52,9 @@
                 <p class="insideContent">Habitação - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="homeBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="home"
-                                onfocus="this.value=''"></input>€ /<label id="habitacaoMaxBudget"></label>
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
+                                id="home" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
+                                id="habitacaoMaxBudget" value="0">€</input>
                 </p>
         </div>
 
@@ -63,8 +65,8 @@
                                 id="entertainmentBudget" onfocus="this.value=''"></input>€
                 </p>
                 <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="entertainment" onfocus="this.value=''"></input>€ /<label
-                                id="lazerMaxBudget"></label>
+                                id="entertainment" onfocus="this.value=''"></input>€ /<input disabled
+                                class="cssMaxBudget" id="lazerMaxBudget" value="0">€</input>
                 </p>
         </div>
 
@@ -74,8 +76,9 @@
                 <p class="insideContent">Saúde - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="healthBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="health"
-                                onfocus="this.value=''"></input>€ /<label id="saudeMaxBudget"></label>
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
+                                id="health" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
+                                id="saudeMaxBudget" value="0">€</input>
                 </p>
         </div>
 
@@ -85,16 +88,17 @@
                 <p class="insideContent">Veículo - Orçamento:<input type="number" value="0" class="textBudget"
                                 id="vehicleBudget" onfocus="this.value=''"></input>€
                 </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense" id="vehicle"
-                                onfocus="this.value=''"></input>€ /<label id="vehicleMaxBudget"></label>
+                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
+                                id="vehicle" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
+                                id="vehicleMaxBudget" value="0">€</input>
                 </p>
         </div>
 
         <!-- Total -->
         <button type="button" class="collapsibleTotal">Total</button>
         <div class="content">
-                <p class="insideContent">Gasto Total:<label id="totalActual"></label> &nbsp;€</p>
-                <p class="insideContent">Orçamento Total:<label id="totalMaxBudget"></label></p>
+                <p class="insideContent">Gasto Total: <label id="totalActual"></label>€</p>
+                <p class="insideContent">Orçamento Total: <label id="totalMaxBudget"></label>€</p>
         </div>
 
         <!-- Save Button -->
