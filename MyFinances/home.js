@@ -9,6 +9,35 @@ function barFunction() {
 }
 
 
+async function convert() {
+
+    const response = await fetch("https://api.exchangeratesapi.io/latest?base=GBP&symbols=EUR,USD")
+    myJson = await response.json()
+
+    console.log(JSON.stringify(myJson));
+
+
+    for(first in myJson) {
+        if (first == "rates") {
+            // array.rates exists
+            for(k in myJson.rates) {
+                 // k being key
+                 var thisValue = myJson.rates[k];
+                 console.log(thisValue);
+            }
+        }
+        console.log(myJson[first]);
+    } 
+    
+   
+}
+
+
+
+
+
+convert();
+
 let money = 0
 
 if (localStorage.getItem('money')) {
@@ -17,9 +46,9 @@ if (localStorage.getItem('money')) {
 
     if (money >= 0) {
 
-        document.querySelector("#currentMoney").style.color ="green"
+        document.querySelector("#currentMoney").style.color = "green"
     } else {
-        document.querySelector("#currentMoney").style.color ="red"
+        document.querySelector("#currentMoney").style.color = "red"
     }
 } else {
     money
@@ -27,11 +56,11 @@ if (localStorage.getItem('money')) {
 
 
 
- document.getElementById("btnAddMoney").addEventListener("click", function () {
+document.getElementById("btnAddMoney").addEventListener("click", function () {
 
     let mon = +document.querySelector("#currentMoney").value
     let actmon = +document.querySelector("#addMoney").value
-    
+
     sum = mon + actmon
 
     document.querySelector("#currentMoney").value = sum
@@ -40,11 +69,11 @@ if (localStorage.getItem('money')) {
     localStorage.setItem("money", JSON.stringify(money))
     if (money >= 0) {
 
-        document.querySelector("#currentMoney").style.color ="green"
+        document.querySelector("#currentMoney").style.color = "green"
     } else {
-        document.querySelector("#currentMoney").style.color ="red"
+        document.querySelector("#currentMoney").style.color = "red"
     }
     document.querySelector("#addMoney").value = null
-    
-     
-}) 
+
+
+})
