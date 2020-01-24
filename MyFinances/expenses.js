@@ -1,3 +1,18 @@
+// Função para o botão collapse
+let coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  })
+}
 //coloca a data com o mes/ano atual
 document.querySelector("#date").valueAsDate = new Date();
 
@@ -15,9 +30,8 @@ if (localStorage.getItem('money')) {
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
-
-
-
+ 
+  
   for (let i = 0; i < expenses.length; i++) {
     const savedItem = expenses[i]
 
@@ -233,21 +247,7 @@ save.addEventListener("click", function () {
   location.reload();
 })
 
-/*função para o botão collapse*/
-let coll = document.getElementsByClassName("collapsible");
-let i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    let content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  })
-}
 
 // função que guarda os valores na localstorage
 function SaveItem(savedItem, foundDate = true) {
@@ -283,7 +283,7 @@ function SaveItem(savedItem, foundDate = true) {
 
 //função que vai meter os inputs todos a zero se nao existir a data na localstorage
 function ResetValues() {
-  var elements = document.querySelectorAll("input[type=number]")
+  let elements = document.querySelectorAll("input[type=number]")
 
   for (var i = 0, element; element = elements[i++];) {
     element.value = 0;

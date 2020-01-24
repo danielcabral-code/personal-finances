@@ -1,14 +1,7 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function barFunction() {
-    let x = document.getElementById("homeTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
 
 
+
+let currencyContainer=document.getElementById("test")
 let currency = document.getElementById("currency")
 let selectedCurrency
 
@@ -22,20 +15,31 @@ async function convert() {
         myJson = await response.json()
 
         console.log(myJson);
-
-
         console.log(selectedCurrency);
+        currencyContainer.innerHTML=`<p>USD ${Math.floor(myJson.rates.USD*100)/100}</p><p>GBP ${Math.floor(myJson.rates.GBP*100)/100}</p>`
 
-    } else {
-        const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=USD,GBP,EUR`)
+    } 
+    else if (selectedCurrency==="USD") {
+        const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=EUR,GBP`)
         myJson = await response.json()
 
         console.log(myJson);
 
 
         console.log(selectedCurrency);
-
+        currencyContainer.innerHTML=`<p>EUR ${Math.floor(myJson.rates.EUR*100)/100}</p><p>GBP ${Math.floor(myJson.rates.GBP*100)/100}</p>`
     }
+    else{
+        const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=EUR,USD`)
+        myJson = await response.json()
+
+        console.log(myJson);
+
+
+        console.log(selectedCurrency);
+        currencyContainer.innerHTML=`<p>EUR ${Math.floor(myJson.rates.EUR*100)/100}</p><p>USD ${Math.floor(myJson.rates.USD*100)/100}</p>`
+    }
+
 
 
 }
