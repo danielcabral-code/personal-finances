@@ -198,7 +198,22 @@ date.onchange = function () {
   checkOverflow()
 }
 
-function saveBudgets() {
-  const saveBudgets = [date.value, foodBudgetLabel.value, homeBudgetLabel.value, lazerBudgetLabel.value, healthBudgetLabel.value, vehicleBudgetLabel.value]
+
+
+
+
+function saveBudgets(savedItem, foundDate = true) {
+
+  savedItem.date;
+  savedItem.foodBudgetLabel.value;
+  savedItem.homeBudgetLabel.value;
+  savedItem.lazerBudgetLabel.value;
+  savedItem.healthBudgetLabel.value;
+  savedItem.vehicleBudgetLabel.value;
+
+  if (!foundDate) {
+    budgets[budgets.length] = savedItem;
+  }
+
   localStorage.setItem("budgets", JSON.stringify(saveBudgets))
 }
