@@ -23,9 +23,8 @@ if (localStorage.getItem('expenses')) {
 
 
 
-    if ( /* i === expenses.length - 1 && */ savedItem.date === compareDate) {
+    if (savedItem.date === compareDate) {
 
-      //console.log(savedItem.date);
 
       document.getElementById("actualFood").value = savedItem.generalFood
       document.querySelector("#actualAwayFood").value = savedItem.restaurant
@@ -36,7 +35,7 @@ if (localStorage.getItem('expenses')) {
       document.querySelector("#actualTrip").value = savedItem.trip
       document.querySelector("#actualElect").value = savedItem.electricity
       document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualIncome").value = savedItem.income
+      document.querySelector("#actualrent").value = savedItem.rent
       document.querySelector("#actualNet").value = savedItem.internet
       document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
       document.querySelector("#actualPharm").value = savedItem.pharm
@@ -128,10 +127,10 @@ save.addEventListener("click", function () {
 
 
   //calculo gastos da renda
-  let income = +document.querySelector("#income").value
-  let actInc = +document.querySelector("#actualIncome").value
-  sum = actInc + income
-  document.querySelector("#actualIncome").value = sum
+  let rent = +document.querySelector("#rent").value
+  let actInc = +document.querySelector("#actualrent").value
+  sum = actInc + rent
+  document.querySelector("#actualrent").value = sum
 
 
   //calculo gastos da Internet
@@ -227,7 +226,7 @@ save.addEventListener("click", function () {
 
   }
 
-  total = generalFood + awayFood + movies + sports + gym + nightOut + trip + elect + water + income + net + otherPay + pharm + doctor + otherHealth + Fuel + maintenance + insurance + carFine
+  total = generalFood + awayFood + movies + sports + gym + nightOut + trip + elect + water + rent + net + otherPay + pharm + doctor + otherHealth + Fuel + maintenance + insurance + carFine
   money = money - total
   localStorage.setItem('money', JSON.stringify(money))
 
@@ -257,7 +256,7 @@ function SaveItem(savedItem, foundDate = true) {
   savedItem.restaurant = +document.querySelector("#actualAwayFood").value
   savedItem.electricity = +document.querySelector("#actualElect").value
   savedItem.water = +document.querySelector("#actualWater").value
-  savedItem.income = +document.querySelector("#actualIncome").value
+  savedItem.rent = +document.querySelector("#actualrent").value
   savedItem.internet = +document.querySelector("#actualNet").value
   savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
   savedItem.movies = +document.querySelector("#actualCin").value
@@ -302,7 +301,7 @@ function LoadData(savedItem) {
   document.querySelector("#actualTrip").value = savedItem.trip
   document.querySelector("#actualElect").value = savedItem.electricity
   document.querySelector("#actualWater").value = savedItem.water
-  document.querySelector("#actualIncome").value = savedItem.income
+  document.querySelector("#actualrent").value = savedItem.rent
   document.querySelector("#actualNet").value = savedItem.internet
   document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
   document.querySelector("#actualPharm").value = savedItem.pharm

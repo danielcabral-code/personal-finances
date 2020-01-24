@@ -8,32 +8,37 @@ function barFunction() {
     }
 }
 
+
+let currency = document.getElementById("currency")
+let selectedCurrency
+
+
 async function convert() {
-    const response = await fetch("https://api.exchangeratesapi.io/latest?base=GBP&symbols=EUR,USD")
-    myJson = await response.json()
+    selectedCurrency = currency.options[currency.selectedIndex].text
 
-    console.log(JSON.stringify(myJson));
+    if (selectedCurrency === "EUR") {
+
+        const response = await fetch(`https://api.exchangeratesapi.io/latest?&symbols=USD,GBP`)
+        myJson = await response.json()
+
+        console.log(myJson);
 
 
-    for (first in myJson) {
-        if (first == "rates") {
-            // array.rates exists
-            for (k in myJson.rates) {
-                // k being key
-                var thisValue = myJson.rates[k];
-                console.log(thisValue);
-            }
-        }
-        console.log(myJson[first]);
+        console.log(selectedCurrency);
+
+    } else {
+        const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=USD,GBP,EUR`)
+        myJson = await response.json()
+
+        console.log(myJson);
+
+
+        console.log(selectedCurrency);
+
     }
 
+
 }
-
-
-
-
-
-
 
 
 convert();

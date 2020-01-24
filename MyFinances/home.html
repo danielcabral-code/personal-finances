@@ -23,18 +23,35 @@
 </head>
 
 <body>
-   <div class="Money">
+    <div class="Money">
 
-   <span>Saldo Disponivel</span>  
-   <p><input type="number" id="currentMoney" disabled></p> 
-   <p><input type="number"  id="addMoney" placeholder="Introduza o valor a carregar"></p>
-   <button id="btnAddMoney">Carregar saldo</button>
-   </div>
+        <span>Saldo Disponivel</span>
+        <p><input type="number" id="currentMoney" disabled></p>
+        <p><input type="number" id="addMoney" placeholder="Introduza o valor a carregar"></p>
+        <button id="btnAddMoney">Carregar saldo</button>
+    </div>
+    <p></p>
+
+    <div id="converter" onchange="convert()">
+
+        <select id="currency">
+          
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+
+        </select>
+
+
+
+
+    </div>
 
 
 
 
 
-<script src="home.js"></script>
+    <script src="home.js"></script>
 </body>
+
 </html>
