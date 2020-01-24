@@ -8,7 +8,7 @@
     <!-- link para ir buscar o icon das barras pequenas  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- link do css da pagina home -->
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="topnav.css">
     <link rel="stylesheet" href="expenses.css">
 
     <div class="topnav" id="homeTopnav">
@@ -27,44 +27,44 @@
 
 <body>
 
-  
+
 
     <!-- menu de botoões collapse -->
     <div class="menu">
         <div id="calendar">
             <p></p>
-            <input type="month"  id="date" min="2020-01"></input>
+            <input type="month" id="date" min="2020-01"></input>
             <p></p>
         </div>
-         <!-- -------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------- -->
         <button type="button" class="collapsible">Alimentação</button>
 
         <div class="content">
             <p>Alimentação Geral<input type="number" value="0" class="actualExpense" id="geneFood"
                     onfocus="this.value=''"></input>€ <input type="number" class="actual" id="actualFood" value="0"
-                    disabled>€ 
+                    disabled>€
                 <p>Restaurantes<input type="number" value="0" class="actualExpense" id="awayFood"
                         onfocus="this.value=''"></input>€ <input type="number" class="actual" id="actualAwayFood"
-                        value="0" disabled>€ 
+                        value="0" disabled>€
 
 
-             
-                <p></p>
+
+                    <p></p>
         </div>
         <!-- -------------------------------------------------------------------------------------- -->
         <button type="button" class="collapsible">Habitação</button>
         <div class="content">
             <p>Eletricidade<input type="number" value="0" class="actualExpense" id="elect"
                     onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualElect" value="0"
-                    disabled>€ 
+                    disabled>€
 
                 <p>Água<input type="number" value="0" class="actualExpense" id="water"
                         onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualWater" value="0"
-                        disabled>€ 
+                        disabled>€
 
                     <p>Renda<input type="number" value="0" class="actualExpense" id="rent"
                             onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualrent"
-                            value="0" disabled>€ 
+                            value="0" disabled>€
 
                         <p>Internet<input type="number" value="0" class="actualExpense" id="net"
                                 onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualNet"
@@ -72,10 +72,10 @@
 
                             <p>Outros Impostos<input type="number" value="0" class="actualExpense" id="otherPay"
                                     onfocus="this.value=''"></input>€<input type="number" class="actual"
-                                    id="actualOtherPay" value="0" disabled>€ 
+                                    id="actualOtherPay" value="0" disabled>€
 
 
-                               
+
                                 <p></p>
         </div>
         <!-- -------------------------------------------------------------------------------------- -->
@@ -85,25 +85,25 @@
         <div class="content">
             <p>Cinema<input type="number" value="0" class="actualExpense" id="cinema"
                     onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualCin" value="0"
-                    disabled>€ 
+                    disabled>€
                 <p>Eventos Desportivos<input type="number" value="0" class="actualExpense" id="sport"
                         onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualSport" value="0"
-                        disabled>€ 
+                        disabled>€
 
                     <p>Ginásio<input type="number" value="0" class="actualExpense" id="gym"
                             onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualGym"
-                            value="0" disabled>€ 
+                            value="0" disabled>€
 
                         <p>Saídas à noite<input type="number" value="0" class="actualExpense" id="nightOut"
                                 onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualOut"
-                                value="0" disabled>€ 
+                                value="0" disabled>€
 
                             <p>Viagens / Hotéis<input type="number" value="0" class="actualExpense" id="trip"
                                     onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualTrip"
-                                    value="0" disabled>€ 
+                                    value="0" disabled>€
 
 
-                               
+
                                 <p></p>
 
         </div>
@@ -115,14 +115,14 @@
         <div class="content">
             <p>Farmácia<input type="number" value="0" class="actualExpense" id="pharm"
                     onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualPharm" value="0"
-                    disabled>€ 
+                    disabled>€
                 <p>Consultas Médicas<input type="number" value="0" class="actualExpense" id="doctor"
                         onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualDoctor" value="0"
-                        disabled>€ 
+                        disabled>€
 
                     <p>Outras Despesas<input type="number" value="0" class="actualExpense" id="otherHealth"
                             onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualOtherHealth"
-                            value="0" disabled>€ 
+                            value="0" disabled>€
 
 
                         <p></p>
@@ -137,7 +137,7 @@
 
                 <p>Manutenção<input type="number" value="0" class="actualExpense" id="maintenance"
                         onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualMaintenance"
-                        value="0" disabled>€ 
+                        value="0" disabled>€
 
                     <p>Seguro<input type="number" value="0" class="actualExpense" id="insurance"
                             onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualInsurance"
@@ -145,10 +145,9 @@
 
                         <p>Multas<input type="number" value="0" class="actualExpense" id="carFine"
                                 onfocus="this.value=''"></input>€<input type="number" class="actual" id="actualCarFine"
-                                value="0" disabled>€ 
+                                value="0" disabled>€
 
-                            
-                            <p></p>
+                                <p></p>
         </div>
 
     </div>
@@ -157,10 +156,10 @@
 
     <button id="save">Guardar</button>
 
-   
 
 
-    <script src="home.js"></script>
+
+    <script src="topnav.js"></script>
     <script src="expenses.js"></script>
 </body>
 
