@@ -98,12 +98,13 @@
         <button type="button" class="collapsibleTotal">Total</button>
         <div class="content">
                 <p class="insideContent">Gasto Total: <label id="totalActual"></label>€</p>
-                <p class="insideContent">Orçamento Total: <label id="totalMaxBudget"></label>€</p>
+                <p class="insideContent">Orçamento Total: <input disabled type="number" value="0" class="textActualExpense"
+                        id="totalBudget" onfocus="this.value=''"></input>€ 
         </div>
 
         <!-- Save Button -->
         <div class="saveButtonDiv">
-                <button class="saveButtonTotal">Guardar</button>
+                <button class="saveButtonTotal" id="saveBudget">Guardar</button>
         </div>
 
         <!-- Links JS -->
