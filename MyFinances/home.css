@@ -16,17 +16,26 @@ span {
   border: rgb(0, 0, 0) 0.5px solid;
 }
 
- #currentMoney {
-   border: none;
+#currentMoney {
+  border: none;
   width: 170px;
   height: 70px;
   text-align: center;
- font-size: 50px; 
+  font-size: 50px;
   background-color: white;
 
-} 
+}
 
 #converter {
   text-align: center;
 
+}
+
+#valueToConvert {
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
 }

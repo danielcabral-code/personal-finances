@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="home.css">
 
     <div class="topnav" id="homeTopnav">
-        <a class="active" href="home.html">My Finances</a>
+        <a class="active" href="home.html">Home</a>
         <a href="orcamentos.html">Orçamentos</a>
         <a href="expenses.html">Despesas</a>
-        <a href="history.html">Histórico</a>
         <a href="javascript:void(0);" class="icon" onclick="barFunction()">
             <i class="fa fa-bars"></i>
         </a>
@@ -28,23 +27,24 @@
 
         <span>Saldo Disponivel</span>
         <p><input type="number" id="currentMoney" disabled></p>
-        <p><input type="number" id="addMoney" placeholder="Introduza o valor a carregar"></p>
+        <p><input type="number" id="addMoney" placeholder="Introduza o valor a carregar" ></p>
         <button id="btnAddMoney">Carregar saldo</button>
     </div>
     <p></p>
 
-    <div id="converter" onchange="convert()">
-        <p>Selecione a moeda </p>
-        1<select id="currency">
+    <div id="converter">
+        <span>Conversor de moeda </span>
+        <input type="number" id="valueToConvert"></input><select id="currency">
           
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
             <option value="GBP">GBP</option>
 
         </select>
-
+        <button id="doConversion">Converter</button>
     </div>
-    <div id="test"></div>
+   
+    <div id="converted"></div>
 
 
 

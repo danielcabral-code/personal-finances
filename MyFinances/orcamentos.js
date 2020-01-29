@@ -336,5 +336,5 @@ let dataPick = document.getElementById("date");
     resetValues();
   else
     loadData(savedItem);
-    loadDataExpenses(savedItem)
+    loadDataExpenses()
 } 
