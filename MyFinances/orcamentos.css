@@ -154,3 +154,14 @@ p {
     outline: none;
     color: black;
 }
+
+/* Alinhamento valores dentro das tabs */
+.cssMaxBudgetTotal {
+    width: 30px;
+    height: 15px;
+    text-align: right;
+    border: none;
+    border: none;
+    outline: none;
+    color: black;
+}
