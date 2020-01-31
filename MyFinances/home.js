@@ -15,21 +15,21 @@ async function convert(value) {
         myJson = await response.json()
         usdConvert = Math.floor(myJson.rates.USD * 100) * value / 100
         gbpConvert = Math.floor(myJson.rates.GBP * 100) * value / 100
-        currencyContainer.innerHTML = `<p>USD ${usdConvert}</p><p>GBP ${gbpConvert}</p>`
+        currencyContainer.innerHTML = `<div>USD:&nbsp;&nbsp;${usdConvert}</div><div>GBP:&nbsp;&nbsp;${gbpConvert}</div>`
 
     } else if (selectedCurrency === "USD") {
         const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=EUR,GBP`)
         myJson = await response.json()
         euroConvert = Math.floor(myJson.rates.EUR * 100) * value / 100
         gbpConvert = Math.floor(myJson.rates.GBP * 100) * value / 100
-        currencyContainer.innerHTML = `<p>EUR ${euroConvert}</p><p>GBP ${gbpConvert}</p>`
+        currencyContainer.innerHTML = `<div>EUR:&nbsp;&nbsp;${euroConvert}</div><div>GBP:&nbsp;&nbsp;${gbpConvert}</div>`
 
     } else {
         const response = await fetch(`https://api.exchangeratesapi.io/latest?base=${selectedCurrency}&symbols=EUR,USD`)
         myJson = await response.json()
         euroConvert = Math.floor(myJson.rates.EUR * 100) * value / 100
         usdConvert = Math.floor(myJson.rates.USD * 100) * value / 100
-        currencyContainer.innerHTML = `<p>EUR ${euroConvert}</p><p>USD ${usdConvert}</p>`
+        currencyContainer.innerHTML = `<div>EUR:&nbsp;&nbsp;${euroConvert}</div><div>USD:&nbsp;&nbsp;${usdConvert}</div>`
     }
 }
 
