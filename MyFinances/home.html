@@ -40,19 +40,21 @@
                     disabled></input></div>
         </div>
 
-
+        <!-- Card para converter moeda -->
         <div id="converter" class="cardBottom">
             <div class="topText">Conversor de Moeda </div>
             <div class="inputConversion"><input class="inputConversionInside" type="number" id="valueToConvert"
                     placeholder="Insere Valor"></input>
-                <select class="selectMenu" id="currency">
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                </select>
+                <span><select class="selectMenu" id="currency">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                    </select></span>
             </div>
-            <button id="doConversion">Converter</button>
-            <div id="converted"></div>
+            <div class="btnAddMoney2">
+                <span class="convertedMoneyFlex"><span class="convertedMoney" id="converted"></span></span>
+                <span class="conversionButton"><button class="btnMoney2" id="doConversion">CONVERTER</button></span>
+            </div>
         </div>
 
     </div>
