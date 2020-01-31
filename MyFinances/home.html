@@ -12,43 +12,50 @@
     <link rel="stylesheet" href="home.css">
 
     <div class="topnav" id="homeTopnav">
-        <a class="active" href="home.html">Home</a>
+        <a class="active" href="home.html">Minhas Finanças</a>
         <a href="orcamentos.html">Orçamentos</a>
         <a href="expenses.html">Despesas</a>
         <a href="javascript:void(0);" class="icon" onclick="barFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <title>My Finances</title>
+    <title>Minhas Finanças</title>
 </head>
 
 <body>
-    <div class="Money">
 
-        <span>Saldo Disponivel</span>
-        <p><input type="number" id="currentMoney" disabled></p>
-        <p><input type="number" id="addMoney" placeholder="Introduza o valor a carregar" ></p>
-        <button id="btnAddMoney">Carregar saldo</button>
+    <div class="center">
+
+        <!-- Card onde se introduz saldo -->
+        <div class="cardTop">
+            <div class="topCard"><input class="addMoney" type="number" id="addMoney" placeholder="Meu Saldo"></input>
+            </div>
+            <div class="btnMoneyDiv"><button class="btnMoney" id="btnAddMoney">CARREGAR</button></div>
+        </div>
+
+        <!-- Card que diz o saldo -->
+        <div class="cardMiddle">
+            <div class="textMoney">€ Disponível:</div>
+            <div class="position"><input type="number" id="currentMoney" value="0" class="moneyAndSymbol"
+                    disabled></input></div>
+        </div>
+
+
+        <div id="converter" class="cardBottom">
+            <div class="topText">Conversor de Moeda </div>
+            <div class="inputConversion"><input class="inputConversionInside" type="number" id="valueToConvert"
+                    placeholder="Insere Valor"></input>
+                <select class="selectMenu" id="currency">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </div>
+            <button id="doConversion">Converter</button>
+            <div id="converted"></div>
+        </div>
+
     </div>
-    <p></p>
-
-    <div id="converter">
-        <span>Conversor de moeda </span>
-        <input type="number" id="valueToConvert"></input><select id="currency">
-          
-            <option value="EUR">EUR</option>
-            <option value="USD">USD</option>
-            <option value="GBP">GBP</option>
-
-        </select>
-        <button id="doConversion">Converter</button>
-    </div>
-   
-    <div id="converted"></div>
-
-
-
-
 
     <script src="topnav.js"></script>
     <script src="home.js"></script>
