@@ -43,21 +43,20 @@ doConversion.addEventListener("click", function () {
 // Aplica cor vermnelha se estiver negativo e cor verde se estiver positivo ou 0
 let money = 0
 if (localStorage.getItem('money')) {
+
     money = JSON.parse(localStorage.getItem('money'))
     document.querySelector("#currentMoney").value = money
 
     if (money >= 0) {
-        document.querySelector(".moneyAndSymbol").style.color = "green"
+        document.querySelector(".middleInput").style.color = "green"
     } else {
-        document.querySelector(".moneyAndSymbol").style.color = "red"
+        document.querySelector(".middleInput").style.color = "red"
     }
 } else {
     money;
 }
 
-
-
-// Botão que acrescenta o saldo do utilizador; verifica depois de acrescentar se o saldo está negativo ou positivo.
+// Botão que acrescenta o saldo do utilizador; verifica depois de acrescentar se o saldo está negativo ou positivo
 btnAddMoney.addEventListener("click", function () {
 
     let mon = document.querySelector("#currentMoney").value
@@ -67,7 +66,6 @@ btnAddMoney.addEventListener("click", function () {
         addMoney = 0
     } else {
         sum = Number(mon) + Number(addMoney)
-
         document.querySelector("#currentMoney").value = sum
 
         money += parseInt(document.getElementById("addMoney").value)

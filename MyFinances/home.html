@@ -23,43 +23,43 @@
 </head>
 
 <body>
-
-    <div class="center">
+    <div class="centerCards">
 
         <!-- Card onde se introduz saldo -->
         <div class="cardTop">
-            <div class="topCard"><input class="addMoney" value="0" type="number" id="addMoney"
+            <div class="divTopCardInput"><input class="inputMoney" value="0" type="number" id="addMoney"
                     placeholder="Introduz o teu saldo"></input>
             </div>
-            <div class="btnMoneyDiv"><button class="btnMoney" id="btnAddMoney">CARREGAR</button></div>
+            <div class="divButtonSaveMoney"><button class="btnSaveMoney" id="btnAddMoney">CARREGAR</button></div>
         </div>
 
         <!-- Card que diz o saldo -->
         <div class="cardMiddle">
-            <div class="textMoney"><i class="fas fa-money-bill-wave"></i> Disponível:</div>
-            <div class="position"><input type="number" id="currentMoney" value="0" class="moneyAndSymbol"
-                    disabled></input></div>
+            <div class="middleCardTitle"><i class="fas fa-money-bill-wave"></i> Disponível:</div>
+            <div class="divMiddleInput">
+                <input type="number" id="currentMoney" value="0" class="middleInput" disabled></input>
+            </div>
         </div>
 
         <!-- Card para converter moeda -->
         <div id="converter" class="cardBottom">
-            <div class="topText">Conversor de Moeda </div>
-            <div class="inputConversion"><input class="inputConversionInside" type="number" value="0"
-                    id="valueToConvert" placeholder="Insere valor"></input>
+            <div class="bottomCardTitle">Conversor de Moeda </div>
+            <div class="divInputConversion"><input class="inputConversion" type="number" value="0" id="valueToConvert"
+                    placeholder="Insere valor"></input>
                 <span><select class="selectMenu" id="currency">
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
                         <option value="GBP">GBP</option>
                     </select></span>
             </div>
-            <div class="btnAddMoney2">
-                <span class="convertedMoneyFlex"><span class="convertedMoney" id="converted"></span></span>
-                <span class="conversionButton"><button class="btnMoney2" id="doConversion">CONVERTER</button></span>
+            <div class="divBtnAddMoney">
+                <span><span class="convertedMoney" id="converted"></span></span>
+                <button class="btnMoneyConversion" id="doConversion">CONVERTER</button>
             </div>
         </div>
-
     </div>
 
+    <!-- Link para ícones -->
     <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
     <script src="topnav.js"></script>
     <script src="home.js"></script>
