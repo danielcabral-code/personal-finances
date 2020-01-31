@@ -239,3 +239,45 @@ body {
   font-family: "Roboto";
   font-weight: 550;
 }
+
+/* Media queries dispositivos com menos altura (p.Ex: iPhone 5/SE) */
+@media (max-height: 625px) {
+  .cardTop {
+    margin-top: 30px;
+  }
+
+  .cardMiddle {
+    margin-top: 25px;
+  }
+
+  .cardBottom {
+    margin-top: 25px;
+  }
+}
+
+/* Media queries dispositivos desde 601px de largura*/
+@media (min-width: 601px) {
+  .cardTop {
+    width: 500px;
+  }
+
+  .inputMoney {
+    width: 470px;
+  }
+
+  .cardMiddle {
+    width: 500px;
+  }
+
+  .middleInput {
+    width: 470px;
+  }
+
+  .cardBottom {
+    width: 500px;
+  }
+
+  .inputConversion {
+    width: 380px;
+  }
+}
