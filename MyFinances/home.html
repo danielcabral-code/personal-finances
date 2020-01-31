@@ -28,14 +28,15 @@
 
         <!-- Card onde se introduz saldo -->
         <div class="cardTop">
-            <div class="topCard"><input class="addMoney" type="number" id="addMoney" placeholder="Meu Saldo"></input>
+            <div class="topCard"><input class="addMoney" value="0" type="number" id="addMoney"
+                    placeholder="Introduz o teu saldo"></input>
             </div>
             <div class="btnMoneyDiv"><button class="btnMoney" id="btnAddMoney">CARREGAR</button></div>
         </div>
 
         <!-- Card que diz o saldo -->
         <div class="cardMiddle">
-            <div class="textMoney">€ Disponível:</div>
+            <div class="textMoney"><i class="fas fa-money-bill-wave"></i> Disponível:</div>
             <div class="position"><input type="number" id="currentMoney" value="0" class="moneyAndSymbol"
                     disabled></input></div>
         </div>
@@ -43,8 +44,8 @@
         <!-- Card para converter moeda -->
         <div id="converter" class="cardBottom">
             <div class="topText">Conversor de Moeda </div>
-            <div class="inputConversion"><input class="inputConversionInside" type="number" id="valueToConvert"
-                    placeholder="Insere Valor"></input>
+            <div class="inputConversion"><input class="inputConversionInside" type="number" value="0"
+                    id="valueToConvert" placeholder="Insere valor"></input>
                 <span><select class="selectMenu" id="currency">
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
@@ -59,6 +60,7 @@
 
     </div>
 
+    <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
     <script src="topnav.js"></script>
     <script src="home.js"></script>
 </body>

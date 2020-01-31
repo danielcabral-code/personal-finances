@@ -60,17 +60,11 @@ if (localStorage.getItem('money')) {
 // Botão que acrescenta o saldo do utilizador; verifica depois de acrescentar se o saldo está negativo ou positivo.
 btnAddMoney.addEventListener("click", function () {
 
-
     let mon = document.querySelector("#currentMoney").value
     let addMoney = document.querySelector("#addMoney").value
-    
+
     if (!addMoney) {
-
         addMoney = 0
-        console.log(addMoney);
-        alert("Deve introduzir um valor")
-        
-
     } else {
         sum = Number(mon) + Number(addMoney)
 
@@ -85,9 +79,5 @@ btnAddMoney.addEventListener("click", function () {
             document.querySelector("#currentMoney").style.color = "red"
         }
         document.querySelector("#addMoney").value = null
-
-
     }
-
-
 })

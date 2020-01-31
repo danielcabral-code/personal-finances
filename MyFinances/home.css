@@ -112,6 +112,7 @@ body {
   font-family: "Roboto";
   color: green;
   font-weight: bold;
+  outline: none;
 }
 
 /* Dinheiro card do meio */
