@@ -1,6 +1,7 @@
 /* Tamanho da página */
 html {
     height: 100%;
+  
 }
 
 /* Tamanho do body + fonte */
@@ -74,7 +75,7 @@ p {
     color: rgb(0, 0, 0);
     cursor: pointer;
     padding: 18px;
-    width: 375px;
+    width: 100%;
     border: none;
     text-align: left;
     outline: none;
@@ -95,7 +96,7 @@ p {
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 375px;
+    width: 100%;
     border: none;
     text-align: left;
     outline: none;
@@ -118,7 +119,7 @@ p {
     transition: max-height 0.2s ease-out;
     background-color: lightblue;
     margin-left: -8px;
-    width: 300px;
+    width: 100%;
 }
 
 /* Cor dentro dos botões collapse */
@@ -139,7 +140,7 @@ p {
     border: none;
     color: white;
     height: 53px;
-    width: 355px;
+    width: 100%;
     border-radius: 10px;
     text-align: center;
 }

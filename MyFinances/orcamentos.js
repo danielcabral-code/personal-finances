@@ -94,10 +94,10 @@ const vehicleBudgetLabel = document.getElementById("vehicleMaxBudget")
 saveButton.addEventListener("click", function () {
   foodBudgetLabel.value = +foodBudget.value + +foodBudgetLabel.value
   homeBudgetLabel.value = +homeBudget.value + +homeBudgetLabel.value
-  lazerBudgetLabel.value = +lazerBudget.value+ +lazerBudgetLabel.value
-  healthBudgetLabel.value = +healthBudget.value+ +healthBudgetLabel.value
-  vehicleBudgetLabel.value = +vehicleBudget.value+ +vehicleBudgetLabel.value
-  totalMaxBudget.value = +foodBudgetLabel.value + + homeBudgetLabel.value + +lazerBudgetLabel.value + +healthBudgetLabel.value + +vehicleBudgetLabel.value
+  lazerBudgetLabel.value = +lazerBudget.value + +lazerBudgetLabel.value
+  healthBudgetLabel.value = +healthBudget.value + +healthBudgetLabel.value
+  vehicleBudgetLabel.value = +vehicleBudget.value + +vehicleBudgetLabel.value
+  totalMaxBudget.value = +foodBudgetLabel.value + +homeBudgetLabel.value + +lazerBudgetLabel.value + +healthBudgetLabel.value + +vehicleBudgetLabel.value
   checkOverflow()
 
 
@@ -133,9 +133,9 @@ saveButton.addEventListener("click", function () {
 function checkOverflow() {
   if (+actualExpenseFood.value > +foodBudgetLabel.value) {
     actualExpenseFood.style.color = "red"
-  } else if (+actualExpenseFood.value <= +foodBudgetLabel.value) {
+  } else if (+actualExpenseFood.value < +foodBudgetLabel.value) {
     actualExpenseFood.style.color = "green"
-  }
+  } else actualExpenseFood.style.color = "black"
 
   if (+actualExpenseHome.value > +homeBudgetLabel.value) {
     actualExpenseHome.style.color = "red"
@@ -173,8 +173,8 @@ let actualExpenseHealth = document.getElementById("health")
 let actualExpenseVehicle = document.getElementById("vehicle")
 let totalActual = document.getElementById("totalActual")
 
-// Carrega valores quando se abre a página
-window.onload = function () {
+function loadDataExpenses() {
+
   for (let i = 0; i < expensesData.length; i++) {
 
     let savedItem = expensesData[i];
@@ -203,39 +203,19 @@ window.onload = function () {
       totalActual.value = 0;
     }
   }
+
+}
+// Carrega valores quando se abre a página
+window.onload = function () {
+  loadDataExpenses();
   checkOverflow()
 }
 
-// Carrega valores de cada mês ao mudar mês
+
+
+// Carrega valores de cada mês das despesas ao mudar mês
 date.onchange = function () {
-  for (let i = 0; i < expensesData.length; i++) {
-
-    let savedItem = expensesData[i];
-
-    if (savedItem.date === date.value && (
-        savedItem.generalFood > 0 || savedItem.restaurant > 0 ||
-        savedItem.electricity > 0 || savedItem.water > 0 || savedItem.rent > 0 || savedItem.internet > 0 || savedItem.otherHousePay > 0 ||
-        savedItem.movies > 0 || savedItem.sports > 0 || savedItem.gym > 0 || savedItem.nightOut > 0 || savedItem.trip > 0 ||
-        savedItem.pharm > 0 || savedItem.doctor > 0 || savedItem.otherHealthPay > 0 ||
-        savedItem.fuel > 0 || savedItem.carMaintenance > 0 || savedItem.carInsurance > 0 || savedItem.carFine > 0)) {
-
-      actualExpenseFood.value = savedItem.generalFood + savedItem.restaurant;
-      actualExpenseHome.value = savedItem.electricity + savedItem.water + savedItem.rent + savedItem.internet + savedItem.otherHousePay;
-      actualExpenseEntertainment.value = savedItem.movies + savedItem.sports + savedItem.gym + savedItem.nightOut + savedItem.trip;
-      actualExpenseHealth.value = savedItem.pharm + savedItem.doctor + savedItem.otherHealthPay;
-      actualExpenseVehicle.value = savedItem.fuel + savedItem.carMaintenance + savedItem.carInsurance + savedItem.carFine;
-      totalActual.value = ` ${+actualExpenseFood.value + +actualExpenseHome.value + +actualExpenseEntertainment.value + +actualExpenseHealth.value + +actualExpenseVehicle.value}`;
-      break;
-
-    } else if (savedItem.date !== date.value) {
-      actualExpenseFood.value = 0;
-      actualExpenseHome.value = 0;
-      actualExpenseEntertainment.value = 0;
-      actualExpenseHealth.value = 0;
-      actualExpenseVehicle.value = 0;
-      totalActual.value = 0
-    }
-  }
+  loadDataExpenses();
   checkOverflow()
 }
 
@@ -271,7 +251,7 @@ function resetValues() {
 }
 
 
-function loadData(savedItem){
+function loadData(savedItem) {
 
   document.getElementById("alimentacaoMaxBudget").value = savedItem.food
   document.querySelector("#habitacaoMaxBudget").value = savedItem.home
@@ -282,43 +262,12 @@ function loadData(savedItem){
 
 }
 
-function loadDataExpenses() {
 
-  for (let i = 0; i < expensesData.length; i++) {
-
-    let savedItem = expensesData[i];
-
-    if (savedItem.date === date.value && (
-        savedItem.generalFood > 0 || savedItem.restaurant > 0 ||
-        savedItem.electricity > 0 || savedItem.water > 0 || savedItem.rent > 0 || savedItem.internet > 0 || savedItem.otherHousePay > 0 ||
-        savedItem.movies > 0 || savedItem.sports > 0 || savedItem.gym > 0 || savedItem.nightOut > 0 || savedItem.trip > 0 ||
-        savedItem.pharm > 0 || savedItem.doctor > 0 || savedItem.otherHealthPay > 0 ||
-        savedItem.fuel > 0 || savedItem.carMaintenance > 0 || savedItem.carInsurance > 0 || savedItem.carFine > 0)) {
-
-      actualExpenseFood.value = savedItem.generalFood + savedItem.restaurant;
-      actualExpenseHome.value = savedItem.electricity + savedItem.water + savedItem.rent + savedItem.internet + savedItem.otherHousePay;
-      actualExpenseEntertainment.value = savedItem.movies + savedItem.sports + savedItem.gym + savedItem.nightOut + savedItem.trip;
-      actualExpenseHealth.value = savedItem.pharm + savedItem.doctor + savedItem.otherHealthPay;
-      actualExpenseVehicle.value = savedItem.fuel + savedItem.carMaintenance + savedItem.carInsurance + savedItem.carFine;
-      totalActual.value = ` ${+actualExpenseFood.value + +actualExpenseHome.value + +actualExpenseEntertainment.value + +actualExpenseHealth.value + +actualExpenseVehicle.value}`;
-      break;
-
-    } else if (savedItem.date !== date.value) {
-      actualExpenseFood.value = 0;
-      actualExpenseHome.value = 0;
-      actualExpenseEntertainment.value = 0;
-      actualExpenseHealth.value = 0;
-      actualExpenseVehicle.value = 0;
-      totalActual.value = 0;
-    }
-  }
-  
-}
 
 let dataPick = document.getElementById("date");
 
-//função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage caso existam
- dataPick.onchange = function () {
+//função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage dos orçamentos caso existam
+dataPick.onchange = function () {
 
   let foundDate = false;
   let savedItem;
@@ -336,5 +285,5 @@ let dataPick = document.getElementById("date");
     resetValues();
   else
     loadData(savedItem);
-    loadDataExpenses()
-} 
+  loadDataExpenses()
+}

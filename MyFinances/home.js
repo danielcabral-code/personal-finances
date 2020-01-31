@@ -55,34 +55,39 @@ if (localStorage.getItem('money')) {
     money;
 }
 
-// Função que verifica se o utilizador está a tentar carregar no saldo um valor negativo 
-function checkNegativeValue() {
 
-    let value = parseFloat(document.getElementById("addMoney").value);
-    if (value < 0) {
-        alert("Não são permitidos valores negativos aqui");
-        document.querySelector("#addMoney").value = 0
-    }
-}
 
 // Botão que acrescenta o saldo do utilizador; verifica depois de acrescentar se o saldo está negativo ou positivo.
 btnAddMoney.addEventListener("click", function () {
 
-    checkNegativeValue();
-    let mon = +document.querySelector("#currentMoney").value
-    let actmon = +document.querySelector("#addMoney").value
 
-    sum = mon + actmon
+    let mon = document.querySelector("#currentMoney").value
+    let addMoney = document.querySelector("#addMoney").value
+    
+    if (!addMoney) {
 
-    document.querySelector("#currentMoney").value = sum
+        addMoney = 0
+        console.log(addMoney);
+        alert("Deve introduzir um valor")
+        
 
-    money += parseInt(document.getElementById("addMoney").value)
-    localStorage.setItem("money", JSON.stringify(money))
-
-    if (money >= 0) {
-        document.querySelector("#currentMoney").style.color = "green"
     } else {
-        document.querySelector("#currentMoney").style.color = "red"
+        sum = Number(mon) + Number(addMoney)
+
+        document.querySelector("#currentMoney").value = sum
+
+        money += parseInt(document.getElementById("addMoney").value)
+        localStorage.setItem("money", JSON.stringify(money))
+
+        if (money >= 0) {
+            document.querySelector("#currentMoney").style.color = "green"
+        } else {
+            document.querySelector("#currentMoney").style.color = "red"
+        }
+        document.querySelector("#addMoney").value = null
+
+
     }
-    document.querySelector("#addMoney").value = null
+
+
 })
