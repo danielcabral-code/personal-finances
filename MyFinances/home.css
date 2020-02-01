@@ -255,10 +255,11 @@ body {
   }
 }
 
-/* Media queries dispositivos desde 601px de largura*/
+/* Media queries dispositivos desde 601px de largura */
 @media (min-width: 601px) {
   .cardTop {
     width: 500px;
+    margin-top: 100px;
   }
 
   .inputMoney {
