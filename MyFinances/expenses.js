@@ -21,7 +21,7 @@ for (i = 0; i < coll.length; i++) {
 // Coloca a data com o mês/ano atual
 document.querySelector("#date").valueAsDate = new Date();
 
-//leitura dos dados da localStorage do saldo, se não existir é atribuido o valor de 0 à variável
+// Leitura dos dados do localStorage do saldo; se não existir é atribuido o valor de 0 à variável
 let compareDate = document.querySelector("#date").value
 if (localStorage.getItem('money')) {
   money = JSON.parse(localStorage.getItem('money'))
@@ -29,7 +29,7 @@ if (localStorage.getItem('money')) {
   money = 0
 }
 
-//leitura da localStorage das despesas, é comparado se a data selecionada existe nas despesas, se existir é carregado senão é atribuido um array vazio
+// Leitura do localStorage das despesas; é comparado se a data selecionada existe nas despesas; se existir é carregado senão é atribuido um array vazio
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -65,7 +65,7 @@ if (localStorage.getItem('expenses')) {
   expenses = []
 }
 
-//Botão para guardar despesas
+// Botão para guardar despesas
 saveButton.addEventListener("click", function () {
 
   // Cálculo da alimentação geral
