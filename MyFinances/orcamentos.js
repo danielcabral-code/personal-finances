@@ -33,7 +33,7 @@ for (i = 0; i < coll.length; i++) {
 // Altera a data para o mês e ano atual
 document.querySelector("#date").valueAsDate = new Date();
 
-// Leitura localstorage
+// Leitura da localstorage dos orçamentos, se a data existir os valores são carregados para a página, senão é criado um array vazio
 let compareDate = document.getElementById("date").value;
 let budgets = []
 
@@ -151,6 +151,8 @@ let actualExpenseHealth = document.getElementById("health")
 let actualExpenseVehicle = document.getElementById("vehicle")
 let totalActual = document.getElementById("totalActual")
 
+
+//Função que lê os dados do localstorage das despesas e soma os valores por categoria para serem apresentados na página de orçamentos
 function loadDataExpenses() {
 
   for (let i = 0; i < expensesData.length; i++) {
@@ -195,7 +197,7 @@ date.onchange = function () {
   checkOverflow()
 }
 
-// Função que guarda os valores no localstorage
+// Função que guarda os valores no localstorage, se a data existir são feitos os cálculos e muda os valores, senão acrescenta uma nova lista de orçamentos
 function SaveItem(savedItem, foundDate = true) {
   savedItem.date = document.querySelector("#date").value;
   savedItem.food = +document.querySelector("#foodMaxBudget").value
@@ -221,7 +223,7 @@ function resetValues() {
   }
 }
 
-// Leitura localstorage
+// Leitura da localstorage dos orçamentos 
 function loadData(savedItem) {
   document.getElementById("foodMaxBudget").value = savedItem.food
   document.querySelector("#homeMaxBudget").value = savedItem.home
@@ -233,7 +235,7 @@ function loadData(savedItem) {
 
 let dataPick = document.getElementById("date");
 
-// Função que: ou mete os valores dos inputs a zero, ou lê os dados do localstorage caso existam
+// Função que ou mete os valores dos inputs a zero, ou lê os dados do localstorage dos orçamentos caso existam
 dataPick.onchange = function () {
 
   let foundDate = false;
