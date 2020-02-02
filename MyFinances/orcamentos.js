@@ -98,39 +98,46 @@ saveButton.addEventListener("click", function () {
     SaveItem(newBudgets, foundDate);
   }
   location.reload();
+  checkOverflow()
 })
 
-// Escolher cor das despesas conforme ultrapasse ou não o orçamento
+// Mudar cor das despesas conforme ultrapasse ou não o orçamento
 function checkOverflow() {
   if (+actualExpenseFood.value > +foodBudgetLabel.value) {
     actualExpenseFood.style.color = "red"
-  } else if (+actualExpenseFood.value < +foodBudgetLabel.value) {
+  } else if (+actualExpenseFood.value <= +foodBudgetLabel.value) {
     actualExpenseFood.style.color = "green"
-  } else actualExpenseFood.style.color = "black"
+  }
 
   if (+actualExpenseHome.value > +homeBudgetLabel.value) {
     actualExpenseHome.style.color = "red"
   } else if (+actualExpenseHome.value <= +homeBudgetLabel.value) {
     actualExpenseHome.style.color = "green"
-  } else actualExpenseFood.style.color = "black"
+  }
 
   if (+actualExpenseEntertainment.value > +lazerBudgetLabel.value) {
-    actualExpenseHome.style.color = "red"
+    actualExpenseEntertainment.style.color = "red"
   } else if (+actualExpenseEntertainment.value <= +lazerBudgetLabel.value) {
     actualExpenseEntertainment.style.color = "green"
-  } else actualExpenseFood.style.color = "black"
+  }
 
   if (+actualExpenseHealth.value > +healthBudgetLabel.value) {
     actualExpenseHealth.style.color = "red"
   } else if (+actualExpenseHealth.value <= +healthBudgetLabel.value) {
     actualExpenseHealth.style.color = "green"
-  } else actualExpenseFood.style.color = "black"
+  }
 
   if (+actualExpenseVehicle.value > +vehicleBudgetLabel.value) {
     actualExpenseVehicle.style.color = "red"
   } else if (+actualExpenseVehicle.value <= +vehicleBudgetLabel.value) {
     actualExpenseVehicle.style.color = "green"
-  } else actualExpenseFood.style.color = "black"
+  }
+
+  if (+totalActual.value > totalMaxBudget.value) {
+    totalActual.style.color = "red"
+  } else if (+totalActual.value <= totalMaxBudget.value) {
+    totalActual.style.color = "green"
+  }
 }
 
 // Dados para posteriormente carregar valores
@@ -207,7 +214,7 @@ function SaveItem(savedItem, foundDate = true) {
 
 // Função que vai meter os inputs todos a zero se nao existir a data no localstorage
 function resetValues() {
-  let elements = document.querySelectorAll("input[class=cssMaxBudget],input[class=cssMaxBudgetTotal")
+  let elements = document.querySelectorAll("input[class=disabledInputBudgets]")
 
   for (var i = 0, element; element = elements[i++];) {
     element.value = 0;
@@ -237,14 +244,47 @@ dataPick.onchange = function () {
     savedItem = budgets[i];
 
     if (savedItem.date === compareDate) {
-      foundDate = true;
+      foundDate = true
       break;
     }
   }
 
   if (!foundDate)
-    resetValues();
+    resetValues(), checkOverflowFlip();
   else
     loadData(savedItem);
-  loadDataExpenses()
+  loadDataExpenses(), checkOverflow()
+}
+
+// Quando não existem despesas que correspondam a um determinado mês para os orçamentos, coloca todos os 0s a verde
+function checkOverflowFlip() {
+  if (+actualExpenseFood.value < +foodBudgetLabel.value) {
+    actualExpenseFood.style.color = "red"
+  } else if (+actualExpenseFood.value > +foodBudgetLabel.value) {
+    actualExpenseFood.style.color = "green"
+  }
+
+  if (+actualExpenseHome.value < +homeBudgetLabel.value) {
+    actualExpenseHome.style.color = "red"
+  } else if (+actualExpenseHome.value > +homeBudgetLabel.value) {
+    actualExpenseHome.style.color = "green"
+  }
+
+  if (+actualExpenseEntertainment.value < +lazerBudgetLabel.value) {
+    actualExpenseEntertainment.style.color = "red"
+  } else if (+actualExpenseEntertainment.value > +lazerBudgetLabel.value) {
+    actualExpenseEntertainment.style.color = "green"
+  }
+
+  if (+actualExpenseHealth.value < +healthBudgetLabel.value) {
+    actualExpenseHealth.style.color = "red"
+  } else if (+actualExpenseHealth.value > +healthBudgetLabel.value) {
+    actualExpenseHealth.style.color = "green"
+  }
+
+  if (+actualExpenseVehicle.value < +vehicleBudgetLabel.value) {
+    actualExpenseVehicle.style.color = "red"
+  } else if (+actualExpenseVehicle.value > +vehicleBudgetLabel.value) {
+    actualExpenseVehicle.style.color = "green"
+  }
 }
