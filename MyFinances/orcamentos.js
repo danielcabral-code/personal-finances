@@ -45,10 +45,10 @@ if (localStorage.getItem("budgets")) {
 
     if (savedItem.date === compareDate) {
 
-      document.getElementById("alimentacaoMaxBudget").value = savedItem.food
-      document.querySelector("#habitacaoMaxBudget").value = savedItem.home
-      document.querySelector("#lazerMaxBudget").value = savedItem.entertainment
-      document.querySelector("#saudeMaxBudget").value = savedItem.health
+      document.getElementById("foodMaxBudget").value = savedItem.food
+      document.querySelector("#homeMaxBudget").value = savedItem.home
+      document.querySelector("#entertainmentMaxBudget").value = savedItem.entertainment
+      document.querySelector("#healthMaxBudget").value = savedItem.health
       document.querySelector("#vehicleMaxBudget").value = savedItem.vehicle
       document.querySelector("#totalMaxBudget").value = savedItem.total
     }
@@ -60,13 +60,13 @@ if (localStorage.getItem("budgets")) {
 // Botão guardar orçamentos
 saveButton = document.querySelector(".saveButton")
 let foodBudget = document.getElementById("foodBudget")
-let foodBudgetLabel = document.getElementById("alimentacaoMaxBudget")
+let foodBudgetLabel = document.getElementById("foodMaxBudget")
 let homeBudget = document.getElementById("homeBudget")
-let homeBudgetLabel = document.getElementById("habitacaoMaxBudget")
+let homeBudgetLabel = document.getElementById("homeMaxBudget")
 let lazerBudget = document.getElementById("entertainmentBudget")
-let lazerBudgetLabel = document.getElementById("lazerMaxBudget")
+let lazerBudgetLabel = document.getElementById("entertainmentMaxBudget")
 let healthBudget = document.getElementById("healthBudget")
-let healthBudgetLabel = document.getElementById("saudeMaxBudget")
+let healthBudgetLabel = document.getElementById("healthMaxBudget")
 let vehicleBudget = document.getElementById("vehicleBudget")
 let vehicleBudgetLabel = document.getElementById("vehicleMaxBudget")
 
@@ -198,10 +198,10 @@ date.onchange = function () {
 // Função que guarda os valores no localstorage
 function SaveItem(savedItem, foundDate = true) {
   savedItem.date = document.querySelector("#date").value;
-  savedItem.food = +document.querySelector("#alimentacaoMaxBudget").value
-  savedItem.home = +document.querySelector("#habitacaoMaxBudget").value
-  savedItem.entertainment = +document.querySelector("#lazerMaxBudget").value
-  savedItem.health = +document.querySelector("#saudeMaxBudget").value
+  savedItem.food = +document.querySelector("#foodMaxBudget").value
+  savedItem.home = +document.querySelector("#homeMaxBudget").value
+  savedItem.entertainment = +document.querySelector("#entertainmentMaxBudget").value
+  savedItem.health = +document.querySelector("#healthMaxBudget").value
   savedItem.vehicle = +document.querySelector("#vehicleMaxBudget").value
   savedItem.total = +document.querySelector("#totalMaxBudget").value
 
@@ -223,10 +223,10 @@ function resetValues() {
 
 // Leitura localstorage
 function loadData(savedItem) {
-  document.getElementById("alimentacaoMaxBudget").value = savedItem.food
-  document.querySelector("#habitacaoMaxBudget").value = savedItem.home
-  document.querySelector("#lazerMaxBudget").value = savedItem.entertainment
-  document.querySelector("#saudeMaxBudget").value = savedItem.health
+  document.getElementById("foodMaxBudget").value = savedItem.food
+  document.querySelector("#homeMaxBudget").value = savedItem.home
+  document.querySelector("#entertainmentMaxBudget").value = savedItem.entertainment
+  document.querySelector("#healthMaxBudget").value = savedItem.health
   document.querySelector("#vehicleMaxBudget").value = savedItem.vehicle
   document.querySelector("#totalMaxBudget").value = savedItem.total
 }

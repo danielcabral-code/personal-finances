@@ -46,7 +46,7 @@ if (localStorage.getItem('expenses')) {
       document.querySelector("#actualTrip").value = savedItem.trip
       document.querySelector("#actualElect").value = savedItem.electricity
       document.querySelector("#actualWater").value = savedItem.water
-      document.querySelector("#actualrent").value = savedItem.rent
+      document.querySelector("#actualRent").value = savedItem.rent
       document.querySelector("#actualNet").value = savedItem.internet
       document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
       document.querySelector("#actualPharm").value = savedItem.pharm
@@ -122,9 +122,9 @@ saveButton.addEventListener("click", function () {
 
   // Cálculo gastos em renda
   let rent = +document.querySelector("#rent").value
-  let actInc = +document.querySelector("#actualrent").value
+  let actInc = +document.querySelector("#actualRent").value
   sum = actInc + rent
-  document.querySelector("#actualrent").value = sum
+  document.querySelector("#actualRent").value = sum
 
   // Cálculo gastos da Internet
   let net = +document.querySelector("#net").value
@@ -157,9 +157,9 @@ saveButton.addEventListener("click", function () {
   document.querySelector("#actualOtherHealth").value = sum
 
   // Cálculo do combustível
-  let Fuel = +document.querySelector("#Fuel").value
+  let fuel = +document.querySelector("#fuel").value
   let actualFuel = +document.querySelector("#actualFuel").value
-  sum = actualFuel + Fuel
+  sum = actualFuel + fuel
   document.querySelector("#actualFuel").value = sum
 
   // Cálculo dos gastos em manutenção
@@ -189,30 +189,30 @@ saveButton.addEventListener("click", function () {
     savedItem = expenses[i];
 
     if (savedItem.date === compareDate) {
-      SaveItem(savedItem);
+      saveItem(savedItem);
       foundDate = true;
     }
   }
 
   if (!foundDate) {
     let newExpense = {};
-    SaveItem(newExpense, foundDate);
+    saveItem(newExpense, foundDate);
   }
 
-  total = generalFood + awayFood + movies + sports + gym + nightOut + trip + elect + water + rent + net + otherPay + pharm + doctor + otherHealth + Fuel + maintenance + insurance + carFine
+  total = generalFood + awayFood + movies + sports + gym + nightOut + trip + elect + water + rent + net + otherPay + pharm + doctor + otherHealth + fuel + maintenance + insurance + carFine
   money = money - total
   localStorage.setItem('money', JSON.stringify(money))
   location.reload();
 })
 
 // Função que guarda os valores no localstorage
-function SaveItem(savedItem, foundDate = true) {
+function saveItem(savedItem, foundDate = true) {
   savedItem.date = document.querySelector("#date").value;
   savedItem.generalFood = +document.querySelector("#actualFood").value
   savedItem.restaurant = +document.querySelector("#actualAwayFood").value
   savedItem.electricity = +document.querySelector("#actualElect").value
   savedItem.water = +document.querySelector("#actualWater").value
-  savedItem.rent = +document.querySelector("#actualrent").value
+  savedItem.rent = +document.querySelector("#actualRent").value
   savedItem.internet = +document.querySelector("#actualNet").value
   savedItem.otherHousePay = +document.querySelector("#actualOtherPay").value
   savedItem.movies = +document.querySelector("#actualCin").value
@@ -236,7 +236,7 @@ function SaveItem(savedItem, foundDate = true) {
 }
 
 // Função que vai meter os inputs todos a zero se nao existir a data no localstorage
-function ResetValues() {
+function resetValues() {
   let elements = document.querySelectorAll("input[type=number]")
 
   for (var i = 0, element; element = elements[i++];) {
@@ -245,7 +245,7 @@ function ResetValues() {
 }
 
 // Função para ler os dados no localstorage
-function LoadData(savedItem) {
+function loadData(savedItem) {
   document.getElementById("actualFood").value = savedItem.generalFood
   document.querySelector("#actualAwayFood").value = savedItem.restaurant
   document.querySelector("#actualCin").value = savedItem.movies
@@ -255,7 +255,7 @@ function LoadData(savedItem) {
   document.querySelector("#actualTrip").value = savedItem.trip
   document.querySelector("#actualElect").value = savedItem.electricity
   document.querySelector("#actualWater").value = savedItem.water
-  document.querySelector("#actualrent").value = savedItem.rent
+  document.querySelector("#actualRent").value = savedItem.rent
   document.querySelector("#actualNet").value = savedItem.internet
   document.querySelector("#actualOtherPay").value = savedItem.otherHousePay
   document.querySelector("#actualPharm").value = savedItem.pharm
@@ -284,7 +284,7 @@ dataPick.onchange = function () {
   }
 
   if (!foundDate)
-    ResetValues();
+    resetValues();
   else
-    LoadData(savedItem);
+    loadData(savedItem);
 }
