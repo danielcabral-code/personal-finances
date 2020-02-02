@@ -1,19 +1,3 @@
-/* window.onscroll = function () {
-  scrollHeader()
-}
-
-const topNav = document.getElementById("homeTopNav");
-
-const sticky = topNav.offsetTop;
-
-function scrollHeader() {
-  if (window.pageYOffset > sticky) {
-    topNav.classList.add("sticky");
-  } else {
-    topNav.classList.remove("sticky");
-  }
-} */
-
 // Função para o botão collapse do Total
 let collTotal = document.getElementsByClassName("collapsibleTotal");
 let iTotal;
@@ -45,11 +29,12 @@ for (i = 0; i < coll.length; i++) {
     }
   })
 }
+
 // Altera a data para o mês e ano atual
 document.querySelector("#date").valueAsDate = new Date();
 
+// Leitura localstorage
 let compareDate = document.getElementById("date").value;
-
 let budgets = []
 
 if (localStorage.getItem("budgets")) {
@@ -58,10 +43,7 @@ if (localStorage.getItem("budgets")) {
   for (let i = 0; i < budgets.length; i++) {
     const savedItem = budgets[i]
 
-
-
     if (savedItem.date === compareDate) {
-
 
       document.getElementById("alimentacaoMaxBudget").value = savedItem.food
       document.querySelector("#habitacaoMaxBudget").value = savedItem.home
@@ -69,17 +51,14 @@ if (localStorage.getItem("budgets")) {
       document.querySelector("#saudeMaxBudget").value = savedItem.health
       document.querySelector("#vehicleMaxBudget").value = savedItem.vehicle
       document.querySelector("#totalMaxBudget").value = savedItem.total
-
     }
   }
 } else {
   budgets = []
 }
 
-
-
 // Botão guardar orçamentos
-saveButton = document.querySelector(".saveButtonTotal")
+saveButton = document.querySelector(".saveButton")
 let foodBudget = document.getElementById("foodBudget")
 let foodBudgetLabel = document.getElementById("alimentacaoMaxBudget")
 let homeBudget = document.getElementById("homeBudget")
@@ -88,8 +67,8 @@ let lazerBudget = document.getElementById("entertainmentBudget")
 let lazerBudgetLabel = document.getElementById("lazerMaxBudget")
 let healthBudget = document.getElementById("healthBudget")
 let healthBudgetLabel = document.getElementById("saudeMaxBudget")
-const vehicleBudget = document.getElementById("vehicleBudget")
-const vehicleBudgetLabel = document.getElementById("vehicleMaxBudget")
+let vehicleBudget = document.getElementById("vehicleBudget")
+let vehicleBudgetLabel = document.getElementById("vehicleMaxBudget")
 
 saveButton.addEventListener("click", function () {
   foodBudgetLabel.value = +foodBudget.value + +foodBudgetLabel.value
@@ -100,19 +79,16 @@ saveButton.addEventListener("click", function () {
   totalMaxBudget.value = +foodBudgetLabel.value + +homeBudgetLabel.value + +lazerBudgetLabel.value + +healthBudgetLabel.value + +vehicleBudgetLabel.value
   checkOverflow()
 
-
   let foundDate = false;
   let savedItem;
   let compareDate = document.querySelector("#date").value;
 
-  //ciclo for que compara se a data escolhida já existe na local storage, se existir substitui os dados, senão cria uns novos
-
+  // Ciclo que compara se a data escolhida já existe no localstorage; se existir substitui os dados, senão cria uns novos
   for (let i = 0; i < budgets.length; i++) {
     savedItem = budgets[i];
 
     if (savedItem.date === compareDate) {
       SaveItem(savedItem);
-      alert("Dados alterados com sucesso!")
       foundDate = true;
     }
   }
@@ -120,14 +96,9 @@ saveButton.addEventListener("click", function () {
   if (!foundDate) {
     let newBudgets = {};
     SaveItem(newBudgets, foundDate);
-    alert("Nova lista de despesa criada com sucesso!")
-
-
   }
-
   location.reload();
 })
-
 
 // Escolher cor das despesas conforme ultrapasse ou não o orçamento
 function checkOverflow() {
@@ -141,25 +112,25 @@ function checkOverflow() {
     actualExpenseHome.style.color = "red"
   } else if (+actualExpenseHome.value <= +homeBudgetLabel.value) {
     actualExpenseHome.style.color = "green"
-  }
+  } else actualExpenseFood.style.color = "black"
 
   if (+actualExpenseEntertainment.value > +lazerBudgetLabel.value) {
     actualExpenseHome.style.color = "red"
   } else if (+actualExpenseEntertainment.value <= +lazerBudgetLabel.value) {
     actualExpenseEntertainment.style.color = "green"
-  }
+  } else actualExpenseFood.style.color = "black"
 
   if (+actualExpenseHealth.value > +healthBudgetLabel.value) {
     actualExpenseHealth.style.color = "red"
   } else if (+actualExpenseHealth.value <= +healthBudgetLabel.value) {
     actualExpenseHealth.style.color = "green"
-  }
+  } else actualExpenseFood.style.color = "black"
 
   if (+actualExpenseVehicle.value > +vehicleBudgetLabel.value) {
     actualExpenseVehicle.style.color = "red"
   } else if (+actualExpenseVehicle.value <= +vehicleBudgetLabel.value) {
     actualExpenseVehicle.style.color = "green"
-  }
+  } else actualExpenseFood.style.color = "black"
 }
 
 // Dados para posteriormente carregar valores
@@ -203,15 +174,13 @@ function loadDataExpenses() {
       totalActual.value = 0;
     }
   }
-
 }
+
 // Carrega valores quando se abre a página
 window.onload = function () {
   loadDataExpenses();
   checkOverflow()
 }
-
-
 
 // Carrega valores de cada mês das despesas ao mudar mês
 date.onchange = function () {
@@ -219,8 +188,7 @@ date.onchange = function () {
   checkOverflow()
 }
 
-
-// função que guarda os valores na localstorage
+// Função que guarda os valores no localstorage
 function SaveItem(savedItem, foundDate = true) {
   savedItem.date = document.querySelector("#date").value;
   savedItem.food = +document.querySelector("#alimentacaoMaxBudget").value
@@ -230,9 +198,6 @@ function SaveItem(savedItem, foundDate = true) {
   savedItem.vehicle = +document.querySelector("#vehicleMaxBudget").value
   savedItem.total = +document.querySelector("#totalMaxBudget").value
 
-
-
-
   if (!foundDate) {
     budgets[budgets.length] = savedItem;
   }
@@ -240,8 +205,7 @@ function SaveItem(savedItem, foundDate = true) {
   localStorage.setItem("budgets", JSON.stringify(budgets))
 }
 
-
-//função que vai meter os inputs todos a zero se nao existir a data na localstorage
+// Função que vai meter os inputs todos a zero se nao existir a data no localstorage
 function resetValues() {
   let elements = document.querySelectorAll("input[class=cssMaxBudget],input[class=cssMaxBudgetTotal")
 
@@ -250,28 +214,25 @@ function resetValues() {
   }
 }
 
-
+// Leitura localstorage
 function loadData(savedItem) {
-
   document.getElementById("alimentacaoMaxBudget").value = savedItem.food
   document.querySelector("#habitacaoMaxBudget").value = savedItem.home
   document.querySelector("#lazerMaxBudget").value = savedItem.entertainment
   document.querySelector("#saudeMaxBudget").value = savedItem.health
   document.querySelector("#vehicleMaxBudget").value = savedItem.vehicle
   document.querySelector("#totalMaxBudget").value = savedItem.total
-
 }
-
-
 
 let dataPick = document.getElementById("date");
 
-//função que ou mete os valores dos inputs a zero, ou, lê os dados da local storage dos orçamentos caso existam
+// Função que: ou mete os valores dos inputs a zero, ou lê os dados do localstorage caso existam
 dataPick.onchange = function () {
 
   let foundDate = false;
   let savedItem;
   let compareDate = document.querySelector("#date").value;
+
   for (let i = 0; i < budgets.length; i++) {
     savedItem = budgets[i];
 

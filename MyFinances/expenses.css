@@ -141,6 +141,8 @@ body {
     border: none;
     background: #DAFCE7;
     color: green;
+    font-family: "Roboto";
+    font-size: 14px;
 }
 
 /* Despesas atuais */
@@ -149,8 +151,9 @@ body {
     border: none;
     background: #DAFCE7;
     color: green;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
+    font-family: "Roboto";
 }
 
 /* Media queries dispositivos com menos altura (p.Ex: iPhone 5/SE) */

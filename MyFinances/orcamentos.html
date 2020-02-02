@@ -14,98 +14,146 @@
 
         <div class="topnav" id="homeTopnav">
                 <a class="active" href="orcamentos.html">Orçamentos</a>
-                <a href="home.html">Home</a>
+                <a href="home.html">Minhas Finanças</a>
                 <a href="expenses.html">Despesas</a>
                 <a href="javascript:void(0);" class="icon" onclick="barFunction()">
                         <i class="fa fa-bars"></i>
                 </a>
         </div>
-        <title>My Finances</title>
+        <title>Minhas Finanças</title>
 </head>
 
 <body>
+
         <!-- Menu de botões collapse -->
-        <div class="menu">
-                <div id="calendar">
-                        <p></p>
-                        <input type="month" id="date" min="2019-12">
-                        <p></p>
+        <div class="divCenterItems">
+                <div class="divCalender" id="calendar">
+                        <input class="calender" type="month" id="date" min="2019-12">
+                </div>
+
+                <!-- Alimentação -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Alimentação</span>
+                        <i class="fas fa-utensils cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="foodBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="food"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="alimentacaoMaxBudget"
+                                        value="0"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Habitação -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Habitação</span>
+                        <i class="fas fa-home cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="homeBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="home"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="habitacaoMaxBudget"
+                                        value="0"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Lazer -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Lazer</span>
+                        <i class="fas fa-glass-martini-alt cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="entertainmentBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="entertainment"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="lazerMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Saúde -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Saúde</span>
+                        <i class="fas fa-heartbeat cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="healthBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="health"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="saudeMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Veículo -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Veículo</span>
+                        <i class="fas fa-car cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="vehicleBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="vehicle"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="vehicleMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Total -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Total</span>
+                        <i class="fas fa-clipboard-list cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div class="divTotal">Gasto Total <i class="fas fa-arrow-right"></i>
+                                <input class="disabledInputExpenses" disabled value="0" id="totalActual"></input>
+                                <span class="boldSlash">/</span>
+                                <input class="disabledInputBudgets" disabled id="totalMaxBudget"></label>
+                                <i class="fas fa-money-bill-wave"></i>
+                        </div>
                 </div>
         </div>
 
-        <!-- Alimentação -->
-        <button type="button" class="collapsible">Alimentação</button>
-        <div class="content">
-                <p class="insideContent">Alimentação - Orçamento:<input type="number" value="0" class="textBudget"
-                                id="foodBudget" onfocus="this.value=''"></input>€
-                </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="food" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
-                                id="alimentacaoMaxBudget" value="0">€</input>
-                </p>
-        </div>
-
-        <!-- Habitação -->
-        <button type="button" class="collapsible">Habitação</button>
-        <div class="content">
-                <p class="insideContent">Habitação - Orçamento:<input type="number" value="0" class="textBudget"
-                                id="homeBudget" onfocus="this.value=''"></input>€
-                </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="home" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
-                                id="habitacaoMaxBudget" value="0">€</input>
-                </p>
-        </div>
-
-        <!-- Lazer -->
-        <button type="button" class="collapsible">Lazer</button>
-        <div class="content">
-                <p class="insideContent">Lazer - Orçamento:<input type="number" value="0" class="textBudget"
-                                id="entertainmentBudget" onfocus="this.value=''"></input>€
-                </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="entertainment" onfocus="this.value=''"></input>€ /<input disabled
-                                class="cssMaxBudget" id="lazerMaxBudget" value="0">€</input>
-                </p>
-        </div>
-
-        <!-- Saúde -->
-        <button type="button" class="collapsible">Saúde</button>
-        <div class="content">
-                <p class="insideContent">Saúde - Orçamento:<input type="number" value="0" class="textBudget"
-                                id="healthBudget" onfocus="this.value=''"></input>€
-                </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="health" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
-                                id="saudeMaxBudget" value="0">€</input>
-                </p>
-        </div>
-
-        <!-- Veículo -->
-        <button type="button" class="collapsible">Veículo</button>
-        <div class="content">
-                <p class="insideContent">Veículo - Orçamento:<input type="number" value="0" class="textBudget"
-                                id="vehicleBudget" onfocus="this.value=''"></input>€
-                </p>
-                <p class="insideContent">Gasto Atual:<input disabled type="number" value="0" class="textActualExpense"
-                                id="vehicle" onfocus="this.value=''"></input>€ /<input disabled class="cssMaxBudget"
-                                id="vehicleMaxBudget" value="0">€</input>
-                </p>
-        </div>
-
-        <!-- Total -->
-        <button type="button" class="collapsibleTotal">Total</button>
-        <div class="content">
-                <p class="insideContent">Gasto Total: <input class="cssMaxBudgetTotal" disabled value="0" id="totalActual"></input>€</p>
-                <p class="insideContent">Orçamento Total: <input class="cssMaxBudgetTotal" disabled  id="totalMaxBudget"></label>€</p>
-        </div>
-
         <!-- Save Button -->
-        <div class="saveButtonDiv">
-                <button class="saveButtonTotal">Guardar</button>
+        <div class="divSaveButton">
+                <button class="saveButton">Guardar</button>
         </div>
 
         <!-- Links JS -->
+        <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
         <script src="topnav.js"></script>
         <script src="orcamentos.js"></script>
 </body>
