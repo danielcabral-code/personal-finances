@@ -1,263 +1,282 @@
 /* Fonte geral da app */
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 /* Cor de fundo */
 body {
-    background: #DAFCE7;
+  background: #dafce7;
 }
 
 /* Texto da navbar */
 .topnav {
-    font-family: "Roboto";
-    font-weight: 550;
+  font-family: "Roboto";
+  font-weight: 550;
 }
 
 /* Botões abrir secção */
 .collapsible {
-    color: white;
-    border: none;
-    font-size: 18px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    border-radius: 15px;
-    background: linear-gradient(to right, #4CAF50, lightgreen);
-    margin-top: 8px;
-    width: 300px;
-    font-family: "Roboto";
-    outline: none;
-    height: 55px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+  color: white;
+  border: none;
+  font-size: 18px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 15px;
+  background: linear-gradient(to right, #4caf50, lightgreen);
+  margin-top: 8px;
+  width: 300px;
+  font-family: "Roboto";
+  outline: none;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 /* Título das cards */
 .cardTitle {
-    padding-left: 15px;
-    padding-top: 15px
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 /* Ícone nas cards */
 .cardIcon {
-    padding-right: 15px;
-    font-size: 33px;
-    padding-top: 10px
+  padding-right: 15px;
+  font-size: 33px;
+  padding-top: 10px;
 }
 
 /* Alinhar items */
 .divCenterItems {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Alinhar botão guardar */
 .divSaveButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
 /* Botão guardar */
 .saveButton {
-    border: none;
-    border-radius: 20px;
-    width: 160px;
-    height: 40px;
-    background: linear-gradient(to right, #4CAF50, lightgreen);
-    font-family: "Roboto";
-    color: white;
-    font-weight: bold;
-    outline: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 20px;
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(to right, #4caf50, lightgreen);
+  font-family: "Roboto";
+  color: white;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Conteúdo dentro das secções */
 .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    outline: none;
-    margin-top: 21px;
-    margin-bottom: -4px;
-    font-family: "Roboto";
-    font-size: 15px;
-    color: #4CAF50;
-    width: 250px;
-    text-align: right;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  outline: none;
+  margin-top: 21px;
+  margin-bottom: -4px;
+  font-family: "Roboto";
+  font-size: 15px;
+  color: #4caf50;
+  width: 250px;
+  text-align: right;
 }
 
 /* Div do calendário */
 .divCalender {
-    margin-top: 30px;
-    margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 /* Calendário */
 .calender {
-    border: none;
-    border-radius: 15px;
-    text-align: center;
-    height: 45px;
-    width: 300px;
-    color: white;
-    font-family: "Roboto";
-    font-size: 20px;
-    font-weight: bold;
-    outline: none;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC) 97% 50% no-repeat, linear-gradient(to right, #4CAF50, lightgreen);
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  height: 45px;
+  width: 300px;
+  color: white;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC)
+      97% 50% no-repeat,
+    linear-gradient(to right, #4caf50, lightgreen);
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Items ao clicar/dar hover */
 .calender:hover,
 .collapsible:hover,
 .saveButton:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Remover estilização default do datepicker */
 [type="month"]::-webkit-inner-spin-button,
 [type="month"]::-webkit-clear-button {
-    display: none;
+  display: none;
 }
 
 /* Remover estilização default do datepicker */
 [type="month"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Remover estilização default do datepicker */
 [type="month"]::-webkit-datetime-edit-month-field,
 [type="month"]::-webkit-datetime-edit-year-field {
-    color: white;
+  color: white;
 }
 
 /* Input preencher orçamento */
 .budgetInCollapsible {
-    width: 38px;
-    border: none;
-    background: #DAFCE7;
-    color: green;
-    font-size: 15px;
-    outline: none;
-    font-family: "Roboto";
+  width: 38px;
+  border: none;
+  background: #dafce7;
+  color: green;
+  font-size: 15px;
+  outline: none;
+  font-family: "Roboto";
 }
 
 /* Input disabled que mostra despesas atuais */
 .disabledInputExpenses {
-    width: 46px;
-    border: none;
-    background: #DAFCE7;
-    color: green;
-    font-size: 15px;
-    font-family: "Roboto";
+  width: 46px;
+  border: none;
+  background: #dafce7;
+  color: green;
+  font-size: 15px;
+  font-family: "Roboto";
 }
 
 /* Input disabled que mostra orçamentos atuais */
 .disabledInputBudgets {
-    width: 44px;
-    border: none;
-    background: #DAFCE7;
-    color: green;
-    font-size: 15px;
-    font-family: "Roboto";
+  width: 44px;
+  border: none;
+  background: #dafce7;
+  color: green;
+  font-size: 15px;
+  font-family: "Roboto";
 }
 
 /* Pôr o slash a bold */
 .boldSlash {
-    font-weight: bold;
-    font-size: 18px;
-    font-family: "Roboto";
-    margin-left: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Roboto";
+  margin-left: 4px;
 }
 
 /* Div do total */
 .divTotal {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 /* Media queries dispositivos com menos altura (p.Ex: iPhone 5/SE) */
 @media (max-height: 660px) {
-    .collapsible {
-        height: 40px;
-        width: 260px;
-        font-size: 14px;
-    }
+  .collapsible {
+    height: 40px;
+    width: 260px;
+    font-size: 14px;
+  }
 
-    .calender {
-        height: 35px;
-        width: 260px;
-    }
+  .calender {
+    height: 35px;
+    width: 260px;
+  }
+
+  /* Título das cards */
+  .cardTitle {
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+
+  /* Ícone nas cards */
+  .cardIcon {
+    padding-right: 15px;
+    font-size: 28px;
+    padding-top: 6px;
+  }
 }
 
 /* Media queries dispositivos desde 601px de largura */
 @media (min-width: 601px) {
-    .collapsible {
-        width: 400px;
-    }
+  .collapsible {
+    width: 400px;
+  }
 
-    .content {
-        width: 350px;
-    }
+  .content {
+    width: 350px;
+  }
 
-    .calender {
-        width: 400px;
-    }
+  .calender {
+    width: 400px;
+  }
 
-    .saveButton {
-        width: 200px;
-    }
+  .saveButton {
+    width: 200px;
+  }
 }
 
 /* Media queries dispositivos desde 768px de largura */
 @media (min-width: 768px) {
-    .collapsible {
-        width: 600px;
-    }
+  .collapsible {
+    width: 600px;
+  }
 
-    .content {
-        width: 550px;
-    }
+  .content {
+    width: 550px;
+  }
 
-    .calender {
-        width: 600px;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC) 98% 50% no-repeat, linear-gradient(to right, #4CAF50, lightgreen);
-    }
+  .calender {
+    width: 600px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC)
+        98% 50% no-repeat,
+      linear-gradient(to right, #4caf50, lightgreen);
+  }
 
-    .saveButton {
-        width: 320px;
-    }
+  .saveButton {
+    width: 320px;
+  }
 }
 
 /* Media queries dispositivos desde 992px de largura */
 @media (min-width: 992px) {
-    .collapsible {
-        width: 700px;
-    }
+  .collapsible {
+    width: 700px;
+  }
 
-    .content {
-        width: 650px;
-    }
+  .content {
+    width: 650px;
+  }
 
-    .calender {
-        width: 700px;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC) 99% 50% no-repeat, linear-gradient(to right, #4CAF50, lightgreen);
-    }
+  .calender {
+    width: 700px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD+UlEQVRYR+3WX2xTdRQH8O/53ZaV3hbWuU1ZFh8WnbBonBtzXqZClrjogySssBAcxvigiEhiNlhiosHEaCIGEdAFHzQmmvmHlezBREWyQiQWNjBjPjhjIGbZBsy1nb1tA/TeY+466N/bW+LIfPC+9f7OPb/PPef3+/USFvmiRZ4f/00AMwu/3y8WqjrT09Pc0dGh5cuXU4FAIPA2M+8GIC0UAIAx+VuKouzJzpkBMN48EAhcyze5LMtgZsRiMVOXRUxcURRnQcDg4KDN4XBczzeD0+mcA8TjcVOARYymKIrNEmBf4riu04K1/+Z8gnXt0RYLQPMh9fjyKFqJF7D786mYgJCMY0M7XG3p2VNrgFm0vatqZETepksnxrEed8YEGT/WvB8Nuq+yp9D8VR5Ccw3BOEGGLzLGZ1LlcpUQ1jcITIQYJ37Tc9KoJZg59aqrPH8FADQcigxUqLTeDPDE/QJbWyScHNPBDDx+n8A3ZzSMTTG2KBJWVQGhGHB+nNF7PHfbz7jpyPDL8iZTQONhta08hO/zASrcwL4tNnT1JXDl72REmQzs77Tjox81LLEDQxcY3iYBTQf6fs4FTJaVrBt9wX7CFGAMrNsbuVaikT0bUVNJWLWC8O1IZmlfbJVwKcwYOJe839ki5QXEJb56cpfbUXAbGoMPH5w954lKDxW7Dre1SphKB6yRoHFuBcIunDm9w9VsCWj8WO0uD2JvMYC5tjxjR8+XCUyGk4ux0wRwqZR3jmxzH7QE1H/KpYlELFQI0N0kcI+HcK+H8OEvOny/p9ryUr2AzsDh9FbpOk8vdbkvP0tRS0D5kehqXWCoEOD1lQJrKwiVJYStwxpG5t/eeGZ3rYDBeS8NZdzXwfXhdteIJeAOX2wngz8opgVtlYR3HpDwmD+B2PyiNwMwYXtog9xrCSjzqV8B1FEMwIj5bLWEgSmGbyLZBjMAgb6YaXd2WgJKfZFxAVGdHri9RsBYYr0Xck+311YKqAngwB/JsV21ydjsFoD5YtDrqikI8Hwdv5ts+p/ZQZuqBZ66k/D82dzD5fMmCf0TOo5OJneBKQCAYFT95ZWn0vNn/Bd4fLHNBO7LBsg24Ke1NvSMavjhSursf3oF4c06CS3+BOLztkIAEG0MbnD2mwOORg8Q45V8/X+wlPBJo4RfZxljKqPOTahbRnhuWMP52RSquzb5LZHTgrm7vC/Y7uoqUIHoWQIazBagUwKevEugeikwHmN8d5lvvvmNZwyocQ6MpqFujDHz6ZDX9YgpYLkvEpcgcs7rYneEVZyuUyS80bnMFFDWr3bpTG8IoctWyW59XKhg2hP0OvebAm496b9/4vZ9fxVp+x+w6BX4B4FZlTAQf+EKAAAAAElFTkSuQmCC)
+        99% 50% no-repeat,
+      linear-gradient(to right, #4caf50, lightgreen);
+  }
 
-    .saveButton {
-        width: 420px;
-    }
+  .saveButton {
+    width: 420px;
+  }
 
-    .disabledInputBudgets {
-        width: 57px;
-    }
+  .disabledInputBudgets {
+    width: 57px;
+  }
 
-    .disabledInputExpenses {
-        width: 57px;
-    }
+  .disabledInputExpenses {
+    width: 57px;
+  }
 }
