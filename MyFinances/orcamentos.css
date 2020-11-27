@@ -34,12 +34,14 @@ body {
 /* Título das cards */
 .cardTitle {
     padding-left: 15px;
+    padding-top: 15px
 }
 
 /* Ícone nas cards */
 .cardIcon {
     padding-right: 15px;
     font-size: 33px;
+    padding-top: 10px
 }
 
 /* Alinhar items */
