@@ -1,3 +1,3 @@
 # myFinancesProject
 
-Personal Finances Web App
+Personal Finances Responsive Web App
