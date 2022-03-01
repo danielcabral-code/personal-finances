@@ -1,3 +1,3 @@
-# personal finances app
+# Personal Finances Web App
 
-Personal Finances web app w/ HTML, CSS, Javascript.
+Personal Finances Web App w/ HTML, CSS, Javascript.
